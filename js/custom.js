@@ -67,6 +67,7 @@ $(function () {
     $images.removeClass("active");
     $(this).addClass("active");
   });
+
   // 클릭 이벤트 추가
   $(".image").on("click", function () {
     const index = $(this).index(); // 몇 번째 이미지인지 확인
