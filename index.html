@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -29,6 +29,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/InertiaPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery-simplyscroll/2.1.1/jquery.simplyscroll.min.js"
       integrity="sha512-i8BU+cmsrlyKOPFSCdO4x4wHXvjg6YIXy6K/PsPL0/3F89ccSgk06wDBP5FTyiGDzVNADQhal1dA1DHH2JB0Rw=="
@@ -37,6 +40,200 @@
     ></script>
   </head>
   <body>
+    <!-- header -->
+    <header>
+      <div id="menu">
+        <h1>
+          <a href="index.html"> <img src="img/logo.png" alt="로고" /></a>
+        </h1>
+        <h2 class="company"><a href="#">회사소개</a></h2>
+        <h2 class="company"><a href="#">제품소개</a></h2>
+        <h2 class="company"><a href="#">회사소식</a></h2>
+        <h2 class="company"><a href="#">대량구매</a></h2>
+      </div>
+    </header>
+    <!-- header -->
+    <section class="con02">
+      <h2>Product</h2>
+      <div class="con02_con">
+        <div class="orbit">
+          <svg viewBox="0 0 400 400">
+            <path
+              stroke-width="1"
+              stroke="black"
+              id="circle"
+              fill="none"
+              d="M396,200 C396,308.24781 308.24781,396 200,396 91.75219,396 4,308.24781 4,200 4,91.75219 91.75219,4 200,4 308.24781,4 396,91.75219 396,200 z"
+            ></path>
+          </svg>
+          <div class="image on">
+            <img src="img/cpb.png" alt="초코파이 찰떡" />
+
+            <div class="info">
+              <h3>초코파이 찰떡</h3>
+              <p>달콤한 초콜릿과 부드러운 쿠키속에 찰떡이 들어있는 초코파이</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/rcb.png" alt="찰떡쿠키 오리지널" />
+
+            <div class="info">
+              <h3>찰떡쿠키 오리지널</h3>
+              <p>
+                부드러운 쿠키 속에 쫀득쫀득 찰떡이 들어있는 한국형 퓨전 쿠키
+              </p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/ycb.png" />
+
+            <div class="info">
+              <h3>유자치즈케이크</h3>
+              <p>치즈케이크의 부드러운 풍미와 상큼한 유자 필링</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/cb.png" alt="쫀득 초코칩" />
+
+            <div class="info">
+              <h3>쫀득 초코칩</h3>
+              <p>초코칩+쫄깃한 떡 조합</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/hcb.png" alt="찰호떡쿠키" />
+
+            <div class="info">
+              <h3>찰호떡쿠키</h3>
+              <p>달콤한 호떡맛과 씨앗의 식감</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/bb.png" alt="브루느와" />
+
+            <div class="info">
+              <h3>브루느와</h3>
+              <p>홈메이드풍 쫀득 브라우니 쿠키</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/gpb.png" alt="그랑쉘 파인애플" />
+
+            <div class="info">
+              <h3>그랑쉘 파인애플</h3>
+              <p>달콤상큼 파인애플 잼</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/fb.png" alt="쫀득과일칩" />
+
+            <div class="info">
+              <h3>쫀득과일칩</h3>
+              <p>달콤상콤 과일칩 콕콕</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/gsb.png" alt="그랑쉘 딸기" />
+
+            <div class="info">
+              <h3>그랑쉘 딸기</h3>
+              <p>딸기+부드러운 쿠키 조합</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/gab.png" alt="그랑쉘 사과" />
+
+            <div class="info">
+              <h3>그랑쉘 사과</h3>
+              <p>사과의 상큼함이 톡톡</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 제품 클릭시 나오는 쿠키 이미지 -->
+      <div class="deco">
+        <div class="set">
+          <div class="left left1 choco">
+            <img src="img/cpc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right3 choco">
+            <img src="img/cpc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left2 oriC">
+            <img src="img/rc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right2 oriC">
+            <img src="img/rc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left3 yuzuC">
+            <img src="img/ycc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right1 yuzuC">
+            <img src="img/ycc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left1 cc">
+            <img src="img/cc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right3 cc">
+            <img src="img/cc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left2 hd">
+            <img src="img/hc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right2 hd">
+            <img src="img/hc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left3 br">
+            <img src="img/bc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right1 br">
+            <img src="img/bc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left1 gp">
+            <img src="img/gpc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right3 gp">
+            <img src="img/gpc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left2 cf">
+            <img src="img/fc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right2 cf">
+            <img src="img/fc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left3 gs">
+            <img src="img/gsc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right1 gs">
+            <img src="img/gsc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left1 ga">
+            <img src="img/gac.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right3 ga">
+            <img src="img/gac.png" alt="쿠키이미지" />
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="con03">
       <div class="indexcon3Box">
         <div class="leftImg">
@@ -67,36 +264,37 @@
               >
             </div>
           </div>
-
-          <div class="rightBot">
-            <div class="botLeft card">
-              <img src="img/Rectangle 25.png" class="one" alt="" />
-              <div class="overlay2">
-                <span>협력사와의 거래를 공정하고 투명하게 실시하겠습니다.</span>
-              </div>
-            </div>
-
-            <div class="botRight">
-              <div class="card">
-                <img src="img/Rectangle 262.png" class="two" alt="" />
-                <div class="overlay">
-                  <span>고객의 감동을 끊임없이 지향하겠습니다.</span>
-                </div>
-              </div>
-              <div class="card">
-                <img src="img/Rectangle 23.png" class="one" alt="" />
+          <div class="rightImg">
+            <div class="rightBot">
+              <div class="botLeft card">
+                <img src="img/Rectangle 25.png" class="one" alt="" />
                 <div class="overlay2">
                   <span
-                    >직원 상호 신롸를 바탕으로 건전한 직장문화를 창립하고, 상호
-                    믿음으로서 회사와 개인의 발전을 도모하겠습니다.</span
+                    >협력사와의 거래를 공정하고 투명하게 실시하겠습니다.</span
                   >
+                </div>
+              </div>
+              <div class="botRight">
+                <div class="card">
+                  <img src="img/Rectangle 262.png" class="two" alt="" />
+                  <div class="overlay">
+                    <span>고객의 감동을 끊임없이 지향하겠습니다.</span>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="img/Rectangle 23.png" class="one" alt="" />
+                  <div class="overlay2">
+                    <span
+                      >직원 상호 신뢰를 바탕으로 건전한 직장문화를 창립하고,
+                      상호 믿음으로서 회사와 개인의 발전을 도모하겠습니다.</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <ul class="botLogo">
         <li>
           <img src="img/제목 없음.png" alt="로고" />
@@ -232,6 +430,53 @@
         <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
       </div>
     </section>
+    <script>
+      const images = gsap.utils.toArray(".image");
+      const container = document.querySelector(".container");
+
+      // 이건 그대로. path는 예전 400x400 기준
+      gsap.set(images, {
+        motionPath: {
+          path: "#circle",
+          align: "#circle",
+          alignOrigin: [0.5, 0.5],
+          end: (i) => i / images.length,
+          autoRotate: true,
+        },
+      });
+
+      // 드래그는 container만 회전
+      Draggable.create(container, {
+        type: "rotation",
+        inertia: true,
+      });
+
+      const rotateTo = gsap.quickTo(container, "rotation", {
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    </script>
+    <script>
+      // 클릭 이벤트 추가
+      $(".image").on("click", function () {
+        const index = $(this).index(); // 몇 번째 이미지인지 확인
+        const sets = $(".deco > .set");
+
+        // 모든 세트 숨김
+        sets.hide();
+
+        // 클릭한 이미지에 해당하는 세트만 표시
+        const currentSet = sets.eq(index).fadeIn(300);
+
+        // 기존 하이라이트 제거
+        $(".cookie-highlight-wrapper").removeClass("cookie-highlight-wrapper");
+
+        // 선택된 세트 내 쿠키 이미지에 하이라이트 효과 추가
+        currentSet.find("img").each(function () {
+          $(this).wrap('<div class="cookie-highlight-wrapper"></div>');
+        });
+      });
+    </script>
     <script>
       gsap.registerPlugin(ScrollTrigger);
       if (window.innerWidth > 600) {
