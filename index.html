@@ -1,10 +1,22 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>청우식품</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.transform2d.js"></script>
+    <script src="js/custom.js"></script>
+
+    <link rel="stylesheet" href="css/index.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
       integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
@@ -17,108 +29,512 @@ s<!DOCTYPE html>
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/InertiaPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery-simplyscroll/2.1.1/jquery.simplyscroll.min.js"
       integrity="sha512-i8BU+cmsrlyKOPFSCdO4x4wHXvjg6YIXy6K/PsPL0/3F89ccSgk06wDBP5FTyiGDzVNADQhal1dA1DHH2JB0Rw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
-    <div class="indexcon3Box">
-      <div class="leftImg">
-        <div class="card">
-          <img src="img/Rectangle 28 (1).png" class="one" alt="" />
-          <div class="overlay2">
-            <span>꿈과 사랑, 행복을 위한 최고의 제품을 공급하겠습니다.</span>
-          </div>
-        </div>
-        <div class="card">
-          <img src="img/Rectangle 272.png" class="two" alt="" />
-          <div class="overlay">
-            <span
-              >윤리경영을 지속적인 경영 목표로 설정하여 회사의 발전을
-              도모하겠습니다.
-            </span>
-          </div>
-        </div>
+    <!-- header -->
+    <header>
+      <ul id="menu">
+        <li>
+          <h1>
+            <a href="index.html"> <img src="img/logo.png" alt="로고" /></a>
+          </h1>
+        </li>
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">회사소식</a></li>
+        <li><a href="#">대량구매</a></li>
+      </ul>
+    </header>
+    <!-- header -->
+    <div id="visual">
+      <div class="video-full">
+        <video autoplay muted playsinline id="bg-video">
+          <source src="img/bg.mp4" type="video/mp4" />
+        </video>
       </div>
 
-      <div class="rightImg">
-        <div class="rightTop card">
-          <img src="img/Rectangle 24.png" class="two" alt="" />
-          <div class="overlay">
-            <span
-              >시장 변화에 적극적으로 대응하여 경쟁력 강화에
-              주력하겠습니다.</span
-            >
-          </div>
-        </div>
-
-        <div class="rightBot">
-          <div class="botLeft card">
-            <img src="img/Rectangle 25.png" class="one" alt="" />
-            <div class="overlay2">
-              <span>협력사와의 거래를 공정하고 투명하게 실시하겠습니다.</span>
-            </div>
-          </div>
-
-          <div class="botRight">
-            <div class="card">
-              <img src="img/Rectangle 262.png" class="two" alt="" />
-              <div class="overlay">
-                <span>고객의 감동을 끊임없이 지향하겠습니다.</span>
-              </div>
-            </div>
-            <div class="card">
-              <img src="img/Rectangle 23.png" class="one" alt="" />
-              <div class="overlay2">
-                <span
-                  >직원 상호 신롸를 바탕으로 건전한 직장문화를 창립하고, 상호
-                  믿음으로서 회사와 개인의 발전을 도모하겠습니다.</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="video-nav">
+        <span class="dot" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
       </div>
     </div>
+    <section class="con01">
+      <div class="box">
+        <div class="flexBox column">
+          <div class="list text">
+            <div class="text1">Together</div>
+            <div class="text2">Dream</div>
+            <div class="text3">Love</div>
+          </div>
+          <div class="plus on">
+            <img src="img/plus.png" alt="icon" />
+          </div>
 
-    <ul class="botLogo">
-      <li>
-        <img src="img/제목 없음.png" alt="로고" />
-      </li>
-      <li>
-        <img src="img/제목 없음.png" alt="로고" />
-      </li>
-      <li>
-        <img src="img/제목 없음.png" alt="로고" />
-      </li>
-      <li>
-        <img src="img/제목 없음.png" alt="로고" />
-      </li>
-      <li>
-        <img src="img/제목 없음.png" alt="로고" />
-      </li>
-      <li>
-        <img src="img/제목 없음.png" alt="로고" />
-      </li>
-      <li>
-        <img src="img/제목 없음.png" alt="로고" />
-      </li>
-      <li>
-        <img src="img/제목 없음.png" alt="로고" />
-      </li>
-      <li>
-        <img src="img/제목 없음.png" alt="로고" />
-      </li>
-      <li>
-        <img src="img/제목 없음.png" alt="로고" />
-      </li>
-    </ul>
+          <div class="logo on">
+            <svg
+              id="Layer_1"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 227.51 56.4"
+            >
+              <text class="cls-1" x="50%" y="41.43" text-anchor="middle">
+                CW FOOD
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="con02">
+      <h2>Product</h2>
+      <div class="con02_con">
+        <div class="orbit">
+          <svg viewBox="0 0 400 400">
+            <path
+              stroke-width="1"
+              stroke="black"
+              id="circle"
+              fill="none"
+              d="M396,200 C396,308.24781 308.24781,396 200,396 91.75219,396 4,308.24781 4,200 4,91.75219 91.75219,4 200,4 308.24781,4 396,91.75219 396,200 z"
+            ></path>
+          </svg>
+          <div class="image on">
+            <img src="img/cpb.png" alt="초코파이 찰떡" />
 
+            <div class="info">
+              <h3>초코파이 찰떡</h3>
+              <p>달콤한 초콜릿과 부드러운 쿠키속에 찰떡이 들어있는 초코파이</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/rcb.png" alt="찰떡쿠키 오리지널" />
+
+            <div class="info">
+              <h3>찰떡쿠키 오리지널</h3>
+              <p>
+                부드러운 쿠키 속에 쫀득쫀득 찰떡이 들어있는 한국형 퓨전 쿠키
+              </p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/ycb.png" />
+
+            <div class="info">
+              <h3>유자치즈케이크</h3>
+              <p>치즈케이크의 부드러운 풍미와 상큼한 유자 필링</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/cb.png" alt="쫀득 초코칩" />
+
+            <div class="info">
+              <h3>쫀득 초코칩</h3>
+              <p>초코칩+쫄깃한 떡 조합</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/hcb.png" alt="찰호떡쿠키" />
+
+            <div class="info">
+              <h3>찰호떡쿠키</h3>
+              <p>달콤한 호떡맛과 씨앗의 식감</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/bb.png" alt="브루느와" />
+
+            <div class="info">
+              <h3>브루느와</h3>
+              <p>홈메이드풍 쫀득 브라우니 쿠키</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/gpb.png" alt="그랑쉘 파인애플" />
+
+            <div class="info">
+              <h3>그랑쉘 파인애플</h3>
+              <p>달콤상큼 파인애플 잼</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/fb.png" alt="쫀득과일칩" />
+
+            <div class="info">
+              <h3>쫀득과일칩</h3>
+              <p>달콤상콤 과일칩 콕콕</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/gsb.png" alt="그랑쉘 딸기" />
+
+            <div class="info">
+              <h3>그랑쉘 딸기</h3>
+              <p>딸기+부드러운 쿠키 조합</p>
+            </div>
+          </div>
+          <div class="image">
+            <img src="img/gab.png" alt="그랑쉘 사과" />
+
+            <div class="info">
+              <h3>그랑쉘 사과</h3>
+              <p>사과의 상큼함이 톡톡</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 제품 클릭시 나오는 쿠키 이미지 -->
+      <div class="deco">
+        <div class="set">
+          <div class="left left1 choco">
+            <img src="img/cpc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right3 choco">
+            <img src="img/cpc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left2 oriC">
+            <img src="img/rc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right2 oriC">
+            <img src="img/rc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left3 yuzuC">
+            <img src="img/ycc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right1 yuzuC">
+            <img src="img/ycc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left1 cc">
+            <img src="img/cc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right3 cc">
+            <img src="img/cc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left2 hd">
+            <img src="img/hc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right2 hd">
+            <img src="img/hc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left3 br">
+            <img src="img/bc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right1 br">
+            <img src="img/bc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left1 gp">
+            <img src="img/gpc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right3 gp">
+            <img src="img/gpc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left2 cf">
+            <img src="img/fc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right2 cf">
+            <img src="img/fc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left3 gs">
+            <img src="img/gsc.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right1 gs">
+            <img src="img/gsc.png" alt="쿠키이미지" />
+          </div>
+        </div>
+        <div class="set">
+          <div class="left left1 ga">
+            <img src="img/gac.png" alt="쿠키이미지" />
+          </div>
+          <div class="right right3 ga">
+            <img src="img/gac.png" alt="쿠키이미지" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="con03">
+      <div class="indexcon3Box">
+        <div class="leftImg">
+          <div class="card">
+            <img src="img/Rectangle 28 (1).png" class="one" alt="" />
+            <div class="overlay2">
+              <span>꿈과 사랑, 행복을 위한 최고의 제품을 공급하겠습니다.</span>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/Rectangle 272.png" class="two" alt="" />
+            <div class="overlay">
+              <span
+                >윤리경영을 지속적인 경영 목표로 설정하여 회사의 발전을
+                도모하겠습니다.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rightImg">
+          <div class="rightTop card">
+            <img src="img/Rectangle 24.png" class="two" alt="" />
+            <div class="overlay">
+              <span
+                >시장 변화에 적극적으로 대응하여 경쟁력 강화에
+                주력하겠습니다.</span
+              >
+            </div>
+          </div>
+          <div class="rightImg">
+            <div class="rightBot">
+              <div class="botLeft card">
+                <img src="img/Rectangle 25.png" class="one" alt="" />
+                <div class="overlay2">
+                  <span
+                    >협력사와의 거래를 공정하고 투명하게 실시하겠습니다.</span
+                  >
+                </div>
+              </div>
+              <div class="botRight">
+                <div class="card">
+                  <img src="img/Rectangle 262.png" class="two" alt="" />
+                  <div class="overlay">
+                    <span>고객의 감동을 끊임없이 지향하겠습니다.</span>
+                  </div>
+                </div>
+                <div class="card">
+                  <img src="img/Rectangle 23.png" class="one" alt="" />
+                  <div class="overlay2">
+                    <span
+                      >직원 상호 신뢰를 바탕으로 건전한 직장문화를 창립하고,
+                      상호 믿음으로서 회사와 개인의 발전을 도모하겠습니다.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="botLogo">
+        <li>
+          <img src="img/제목 없음.png" alt="로고" />
+        </li>
+        <li>
+          <img src="img/제목 없음.png" alt="로고" />
+        </li>
+        <li>
+          <img src="img/제목 없음.png" alt="로고" />
+        </li>
+        <li>
+          <img src="img/제목 없음.png" alt="로고" />
+        </li>
+        <li>
+          <img src="img/제목 없음.png" alt="로고" />
+        </li>
+        <li>
+          <img src="img/제목 없음.png" alt="로고" />
+        </li>
+        <li>
+          <img src="img/제목 없음.png" alt="로고" />
+        </li>
+        <li>
+          <img src="img/제목 없음.png" alt="로고" />
+        </li>
+        <li>
+          <img src="img/제목 없음.png" alt="로고" />
+        </li>
+        <li>
+          <img src="img/제목 없음.png" alt="로고" />
+        </li>
+      </ul>
+    </section>
+    <section class="con04">
+      <h2>청우식품이 만들어가는 SNS 이야기</h2>
+      <h3>
+        <span>청우식품 SNS 채널</span>에서<br />다양한 제품과 이벤트를 제일
+        빠르게 만나보세요.
+      </h3>
+      <div class="snsCard">
+        <div class="imgBox">
+          <img
+            src="img/137008561_698919677455494_1444359597347484203_n.jpg"
+            alt="청우식품 인스타그램 프로필 로고"
+          />
+          <p>cwfood</p>
+        </div>
+        <ul class="snsThumb">
+          <li>
+            <img src="img/sns0.PNG" />
+            <div class="link">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </li>
+          <li>
+            <img src="img/sns1.PNG" />
+            <div class="link">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </li>
+          <li>
+            <img src="img/sns2.PNG" />
+            <div class="link">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </li>
+          <li>
+            <img src="img/sns3.PNG" />
+            <div class="link">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </li>
+          <li>
+            <img src="img/sns4.PNG" />
+            <div class="link">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </li>
+          <li>
+            <img src="img/sns5.PNG" />
+            <div class="link">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </li>
+          <li>
+            <img src="img/sns6.PNG" />
+            <div class="link">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </li>
+        </ul>
+        <ul class="snsTxt">
+          <li class="active">
+            <a href="https://www.instagram.com/p/DPsXrX6Epqj/"
+              >“참깨스틱”으로 마음을 전하는 레시피를 찾습니다 🥰</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/p/DQGqd_JAO9B/"
+              >참깨스틱에게 제일 잘 어울리는 OOTD는?</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/p/DPSra07gOIA/"
+              >쿠키의 새로운 탄생, 쫀득감자떡쿠키 출시🎉</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/p/DO5UOgOgLt5/"
+              >10년 만의 가을맞이 컴백, 밤 찰떡쿠키 재등장🌰</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/p/DOsUM01ElIb/"
+              >청우식품 대표 과자 모나카를 100배 더 맛나게 즐기는 법</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/p/DNw4snswLwY/"
+              >누구나 즐겨 먹는 참깨스틱, 더욱 간편하게 가볍게 즐기세요😋</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/p/DNcKv-CgN68/"
+              >낭만적인 바삭함을 맛보여줄 닭다리스낵🍗</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="btn">
+        <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+        <p><span class="index"></span> / 7</p>
+        <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <!-- 왼쪽 섹션: 로고 + 주소 -->
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="img/logo_wh.png" alt="Cheongwoo logo" />
+          </div>
+          <address class="footer-address">
+            <p>본사: 경기도 포천시 영중면 먼재길 129</p>
+            <p>
+              서울사무소: 서울특별시 성북구 성북로 11 청우빌딩 4층 (한성대입구역
+              5번 출구)
+            </p>
+            <p>대표전화: 02-942-0111 | FAX: 02-941-2608</p>
+            <p>&copy; 2019 CHEONGWOO CO.,LTD. ALL RIGHTS RESERVED.</p>
+          </address>
+        </div>
+
+        <!-- 오른쪽 섹션: 고객센터 + 이용시간 + SNS -->
+        <div class="footer-right">
+          <div class="footer-contact">
+            <p class="customer-service">고객센터: 080-039-8585</p>
+            <p class="service-hours">
+              이용시간: 평일 오전 9시 ~ 오후 5시 (주말, 공휴일 휴무)
+            </p>
+          </div>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <div class="footer-ck">
+            <img src="img/footer_ck.png" alt="쿠키" />
+          </div>
+        </div>
+      </div>
+    </footer>
     <script>
+      const images = gsap.utils.toArray(".image");
+      const container = document.querySelector(".container");
+
+      // 이건 그대로. path는 예전 400x400 기준
+      gsap.set(images, {
+        motionPath: {
+          path: "#circle",
+          align: "#circle",
+          alignOrigin: [0.5, 0.5],
+          end: (i) => i / images.length,
+          autoRotate: true,
+        },
+      });
+
+      // 드래그는 container만 회전
+      Draggable.create(container, {
+        type: "rotation",
+        inertia: true,
+      });
+
+      const rotateTo = gsap.quickTo(container, "rotation", {
+        duration: 0.5,
+        ease: "power2.out",
+      });
+
       gsap.registerPlugin(ScrollTrigger);
       if (window.innerWidth > 600) {
         gsap.from(".one", {
@@ -127,7 +543,7 @@ s<!DOCTYPE html>
             trigger: ".one",
             start: "top bottom",
             toggleActions: "play none none reverse",
-            markers: true,
+            // markers: true,
           },
         });
         gsap.from(".two", {
@@ -137,18 +553,11 @@ s<!DOCTYPE html>
             trigger: ".two",
             start: "top bottom",
             toggleActions: "play none none reverse",
-            markers: true,
+            // markers: true,
           },
         });
       }
-
-      $(function () {
-        $(".botLogo").simplyScroll({
-          speed: 1,
-          pauseOnHover: false,
-          pauseOnTouch: false,
-        });
-      });
     </script>
+    <script src="js/custom_vis.js"></script>
   </body>
 </html>
