@@ -1,0 +1,976 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+img {
+  display: block;
+}
+
+/* 모바일 (600px 이하) */
+@media (max-width: 600px) {
+  /* header 시작!!!!!! */
+  header {
+    height: 80px;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    background: white;
+    align-items: center;
+  }
+
+  #menu {
+    gap: 20px;
+    /* flex-wrap: wrap; */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 9px 8px 3px rgb(95, 95, 95, 0.6);
+  }
+  #menu h1 {
+    width: 100px;
+  }
+
+  #menu h1 img {
+    width: 100%;
+  }
+
+  #menu h2 {
+    font-size: 1rem;
+  }
+
+  /* con01 */
+  .con01 {
+    height: 300px;
+    padding-top: 100px;
+    background-image: url(../img/logo\ opacity\ 20.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+
+  .text {
+    font-size: 1.2rem;
+    line-height: 40px;
+    position: absolute;
+    left: 5%;
+    bottom: 50px;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* con02 */
+
+  .con02 {
+    width: 100%;
+  }
+  .con02 img {
+    width: 100%;
+  }
+
+  /* con03 */
+
+  .con03 {
+    width: 100%;
+    /* background-image: url(img/height3500.png); */
+    background-image: url(../img/sub-background\ wallpaper.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .con03 .wrap {
+    width: 100%;
+    margin: 0px auto;
+  }
+
+  .con03 .button {
+    width: 60%;
+    padding-top: 50px;
+    margin: 50px auto;
+    display: flex;
+    color: white;
+    text-align: center;
+  }
+
+  .con03 .button li {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    background: red;
+    border: 2px solid red;
+    box-sizing: border-box;
+    border-radius: 15px 15px 0px 0px;
+    text-shadow: 3px 3px 3px rgb(182, 169, 169);
+  }
+  .con03 .button li.on {
+    background: white;
+    border: 2px solid red;
+    color: red;
+    text-shadow: 3px 3px 3px rgb(182, 169, 169);
+  }
+
+  .con03 .snack > li {
+    width: 300px;
+    margin: 100px auto;
+    position: relative;
+    align-items: center;
+    text-align: center;
+  }
+
+  .con03 .snack li img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .snack h3 {
+    margin-bottom: 20px;
+  }
+
+  /* inner_box 시작!!!!!!!! */
+
+  .con03 .snack .inner_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border: 2px solid black;
+    border-radius: 10%;
+    /* padding: 30px; */
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    text-align: center;
+    word-break: keep-all;
+  }
+  .con03 .snack .inner_box.active {
+    opacity: 1;
+    pointer-events: auto;
+    background: lightgoldenrodyellow;
+  }
+  .con03 .snack .inner_box h3 {
+    margin: 50px 0px 20px 0px;
+    font-size: 1rem;
+    color: red;
+  }
+
+  .con03 .snack .inner_box strong {
+    font-size: 0.8rem;
+  }
+
+  .con03 .snack .inner_box i {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 1.2rem;
+  }
+  /* .snack .nu */
+  .snack .nu {
+    /* padding: 5px; */
+    height: 10px;
+    margin-top: 20px;
+  }
+  .snack .nu h4 {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 10px 0px;
+  }
+
+  .snack .nu ul {
+    height: 100%;
+  }
+
+  .snack .nu ul li {
+    padding: 2px 0;
+    font-size: 0.8rem;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+
+  .snack .nu > div {
+    margin-top: 130px;
+    font-size: 0.75rem;
+  }
+
+  /* Footer 모바일 */
+
+  /* footer {
+    background: #f45b5b;
+    color: #fff;
+    padding: 60px 40px 40px;
+    box-sizing: border-box;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: center;
+    min-width: 100%;
+  }
+  .footer-logo {
+    width: 120px;
+    margin: 0px auto;
+  }
+
+  .footer-logo img {
+    width: 100%;
+  }
+
+  .footer-address {
+    font-size: 13px;
+    font-style: normal;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+  .footer-address p {
+    margin-bottom: 8px;
+  }
+
+  .customer-service {
+    font-size: 20px;
+  }
+  .customer-service {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .service-hours {
+    font-size: 13px;
+  }
+  .footer-social {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  .footer-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+  }
+  .footer-social a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+  }
+  .footer-ck img {
+    width: 60px;
+    margin: 0px auto;
+  } */
+  /* Footer 모바일 */
+
+  footer {
+    background: #f45b5b;
+    color: #fff;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 100%;
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-logo {
+    width: 100px;
+    margin: 0 auto 20px;
+  }
+
+  .footer-logo img {
+    width: 100%;
+  }
+
+  .footer-address {
+    font-size: 12px;
+    font-style: normal;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+
+  .footer-address p {
+    margin-bottom: 8px;
+  }
+
+  .customer-service {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .service-hours {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .footer-social {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+  }
+
+  .footer-social a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .footer-ck {
+    text-align: center;
+  }
+
+  .footer-ck img {
+    width: 50px;
+    margin: 0 auto;
+  }
+}
+
+/* 태블릿 (600px ~ 1220px) */
+
+@media (min-width: 600px) and (max-width: 1219px) {
+  /* header */
+
+  header {
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    background: white;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+  }
+
+  #menu {
+    gap: 30px;
+    width: 100%;
+    margin: 0px auto;
+    color: #121212;
+    text-shadow: 9px 8px 3px rgb(95, 95, 95, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  /* #menu li {
+    width: calc(100% / 5);
+  } */
+
+  #menu h1 img {
+    width: 100%;
+  }
+
+  #menu h2 {
+    font-size: 1rem;
+  }
+  /* section 시작 !!! */
+
+  /* con01 */
+
+  .con01 {
+    height: 400px;
+    padding-top: 150px;
+    background-image: url(../img/logo\ opacity\ 20.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+
+  .text {
+    font-size: 1.5rem;
+    line-height: 60px;
+    position: absolute;
+    font-weight: bold;
+    left: 8%;
+    bottom: 60px;
+    color: white;
+  }
+  /* con02시작!!!!! */
+
+  .con02 {
+    width: 100%;
+  }
+  .con02 img {
+    width: 100%;
+  }
+
+  /* con03 시작!!!!!!! */
+  .con03 {
+    width: 100%;
+    /* background-image: url(img/height3500.png); */
+    background-image: url(../img/sub-background\ wallpaper.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .con03 .wrap {
+    width: 80%;
+    margin: 0px auto;
+    word-break: keep-all;
+  }
+
+  .con03 .button {
+    width: 80%;
+    font-size: 0.8rem;
+    color: white;
+    display: flex;
+    margin: 0px auto;
+    padding: 50px 0px;
+  }
+
+  .con03 .button li {
+    cursor: pointer;
+    background: red;
+    border: 2px solid red;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    border-radius: 15px 15px 0px 0px;
+    text-shadow: 3px 3px 3px rgb(182, 169, 169);
+  }
+  .con03 .button li.on {
+    background: white;
+    border: 2px solid red;
+    color: red;
+    text-shadow: 3px 3px 3px rgb(182, 169, 169);
+  }
+
+  .con03 .snack {
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .con03 .snack li {
+    width: calc(100% / 2 - 20px);
+    position: relative;
+    text-align: center;
+    margin: 30px auto;
+  }
+  .con03 .snack li img {
+    width: 100%;
+  }
+  .snack h3 {
+    margin-bottom: 10px;
+  }
+
+  /* inner_box 시작!!!!!!!!!!!*/
+
+  .con03 .snack .inner_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border: 2px solid black;
+    border-radius: 10%;
+    padding: 15px;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    word-break: keep-all;
+  }
+  .con03 .snack .inner_box.active {
+    opacity: 1;
+    pointer-events: auto;
+    background: lightgoldenrodyellow;
+  }
+  .con03 .snack .inner_box h3 {
+    margin-top: 25px;
+    font-size: 0.95vw;
+    color: red;
+  }
+  .con03 .snack .inner_box strong {
+    font-size: 0.7rem;
+  }
+  .con03 .snack .inner_box i {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  /* .snack .nu */
+  .snack .nu {
+    /* padding: 8px; */
+    margin: 20px 0;
+  }
+  .snack .nu ul {
+    display: flex;
+    gap: 4px;
+    margin: 10px 0px;
+  }
+  .snack .nu ul li {
+    width: calc(100% / 4);
+    border: 2px solid #777;
+    text-align: center;
+    padding: 3px 0px;
+    margin: 5px 0px;
+  }
+  .snack .nu ul li span {
+    display: block;
+  }
+
+  .snack .nu > div {
+    margin: 20px 0;
+    font-size: 0.7rem;
+  }
+  .snack .nu > div span {
+    font-weight: bold;
+  }
+
+  .con03 .snack .inner_box.active {
+    opacity: 1;
+    pointer-events: auto;
+    /* 보일 때 클릭 가능하게 */
+  }
+
+  /* footer */
+  /* Footer 모바일 */
+
+  footer {
+    background: #f45b5b;
+    color: #fff;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 100%;
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-logo {
+    width: 100px;
+    margin: 0 auto 20px;
+  }
+
+  .footer-logo img {
+    width: 100%;
+  }
+
+  .footer-address {
+    font-size: 12px;
+    font-style: normal;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+
+  .footer-address p {
+    margin-bottom: 8px;
+  }
+
+  .customer-service {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .service-hours {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .footer-social {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+  }
+
+  .footer-social a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .footer-ck {
+    text-align: center;
+  }
+
+  .footer-ck img {
+    width: 50px;
+    margin: 0 auto;
+  }
+}
+/* 데스크톱 (1220px 이상) */
+
+@media (min-width: 1220px) {
+  /* 기존 스타일 유지 */
+  .con03 .snack li {
+    width: 26%;
+  }
+  /* header 시작!!!!!!! */
+  header {
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    background: white;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+  }
+  #menu {
+    height: 100%;
+    color: #121212;
+    text-shadow: 9px 8px 3px rgb(95, 95, 95, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    justify-content: center;
+  }
+
+  #menu h1 {
+    font-size: 2.5rem;
+  }
+  #menu img {
+    width: 100%;
+  }
+  #menu h2 {
+    font-size: 2.5rem;
+  }
+
+  /* section 시작!!!!!!!!!*/
+
+  /*con01 시작!!!!!*/
+
+  .con01 {
+    width: 100%;
+    height: 600px;
+    background-image: url(../img/logo\ opacity\ 20.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-top: 150px;
+  }
+  /* .text { 
+margin-top: 300px;
+  width: 500px;
+  height: 540px;
+  color: white;
+  line-height: 70px;
+  border: 1px solid black;
+  font-weight: bold;
+  font-size: 2.3rem;
+  text-align: left;
+  align-items: center;
+  position: absolute;
+  left: 10%;
+  bottom: 150px;
+} */
+  .text {
+    width: 100%;
+    color: white;
+    line-height: 70px;
+    font-weight: bold;
+    font-size: 2.3rem;
+    position: absolute;
+    left: 10%;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* con02 시작!!!!!!!!*/
+
+  .con02 {
+    /* padding: 100px 0px; */
+    /* height: 700px; */
+    width: 100%;
+  }
+  .con02 img {
+    width: 100%;
+  }
+
+  /* con03 시작!!!!!!!!!!*/
+
+  .con03 {
+    width: 100%;
+    /* background-image: url(img/height3500.png); */
+    background-image: url(../img/sub-background\ wallpaper.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 250px 0px;
+  }
+  .con03 .wrap {
+    width: 100%;
+    margin: 0px auto;
+  }
+  .con03 .button {
+    width: 60%;
+    margin: 30px auto;
+    color: white;
+    display: flex;
+
+    font-size: 1.5rem;
+  }
+  .con03 .button li {
+    cursor: pointer;
+    background: red;
+    border: 2px solid red;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    border-radius: 15px 15px 0px 0px;
+    text-shadow: 3px 3px 3px rgb(182, 169, 169);
+  }
+  .con03 .button li.on {
+    background: white;
+    border: 2px solid red;
+    color: red;
+    text-shadow: 3px 3px 3px rgb(182, 169, 169);
+  }
+  .con03 .snack {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .con03 .snack li {
+    /* flex-wrap: wrap; */
+    /* width: 26%; */
+    width: calc(100% / 3 - 30px);
+    position: relative;
+    text-align: center;
+    margin: 30px auto;
+  }
+  .con03 .snack li img {
+    width: 100%;
+  }
+  .snack h3 {
+    margin-bottom: 20px;
+  }
+
+  /* inner_box 시작!!!!!!!!!!!*/
+
+  .con03 .snack .inner_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border: 2px solid black;
+    border-radius: 10%;
+    padding: 10px;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .con03 .snack .inner_box.active {
+    opacity: 1;
+    pointer-events: auto;
+    background: lightgoldenrodyellow;
+  }
+  .con03 .snack .inner_box h3 {
+    margin: 50px 0px;
+    color: red;
+    font-size: 1.5rem;
+  }
+  .con03 .snack .inner_box strong {
+    margin-bottom: 50px;
+    font-size: 1.2rem;
+  }
+  .con03 .snack .inner_box i {
+    position: absolute;
+    right: 70px; /* 오른쪽에서 10px */
+    top: 40px; /* 위에서 10px */
+    cursor: pointer;
+    font-size: 1.5rem; /* 크기 조정 */
+  }
+  /* snack nu */
+  .snack .nu {
+    padding: 10px 5px;
+    margin: 30px 0px;
+  }
+
+  .snack .nu ul {
+    display: flex;
+    gap: 10px;
+  }
+  .snack .nu ul li {
+    width: calc(100% / 4);
+    border: 2px solid #777;
+    text-align: center;
+    padding: 3px 0px;
+    margin: 5px 0px;
+  }
+  .snack .nu ul li span {
+    display: block;
+  }
+  .snack .nu > div {
+    margin: 30px 0px;
+    font-size: 14px;
+    font-size: 1rem;
+  }
+  .snack .nu > div span {
+    font-weight: bold;
+  }
+
+  .con03 .snack .inner_box.active {
+    opacity: 1;
+    pointer-events: auto;
+    /* 보일 때 클릭 가능하게 */
+  }
+
+  /* footer */
+  footer {
+    background: #f45b5b;
+    color: #fff;
+    padding: 60px 40px 40px;
+    box-sizing: border-box;
+  }
+
+  .footer-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .footer-logo img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  .footer-address {
+    font-style: normal;
+    line-height: 1.8;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .footer-address p {
+    margin-bottom: 8px;
+  }
+
+  .footer-right {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+  }
+
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+
+  .customer-service {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .service-hours {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .footer-social {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .footer-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .footer-ck img {
+    width: 60px;
+  }
+}
