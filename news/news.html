@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/news.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/custom.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="menu">
+        <h1>
+          <a href="index.html"> <img src="img/logo.png" alt="로고" /></a>
+        </h1>
+        <h2 class="company"><a href="#">회사소개</a></h2>
+        <h2 class="company"><a href="#">제품소개</a></h2>
+        <h2 class="company"><a href="#">회사소식</a></h2>
+        <h2 class="company"><a href="#">대량구매</a></h2>
+      </div>
+    </header>
+    <div id="wrap">
+      <div class="news">
+        <section class="top">
+          <div class="sub3Bg">
+            <img src="img/topbg.png" alt="배경이미지" />
+            <div class="word">
+              <svg
+                id="Layer_1"
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 816.34 62.74"
+              >
+                <path
+                  class="cls-1"
+                  d="m39.38,17.39c-1.04-1.53-2.44-2.71-4.2-3.54-1.76-.83-3.75-1.24-5.97-1.24-3.01,0-5.59.75-7.76,2.23-2.16,1.49-3.84,3.63-5.02,6.43-1.18,2.8-1.77,6.16-1.77,10.1s.59,7.46,1.77,10.25,2.85,4.9,5.02,6.35c2.16,1.45,4.71,2.17,7.63,2.17,2.19,0,4.14-.39,5.84-1.18,1.7-.79,3.1-1.89,4.2-3.31s1.81-3.13,2.15-5.12l14.59.13c-.39,3.77-1.71,7.34-3.94,10.71s-5.33,6.11-9.28,8.22c-3.95,2.11-8.55,3.16-13.81,3.16-5.54,0-10.49-1.24-14.86-3.71-4.37-2.47-7.79-6.07-10.27-10.79-2.47-4.72-3.71-10.34-3.71-16.87s1.26-12.23,3.77-16.95c2.52-4.72,5.95-8.31,10.31-10.75C18.44,1.22,23.36,0,28.84,0c4.89,0,9.28.9,13.18,2.7,3.89,1.8,7.05,4.41,9.47,7.84,2.42,3.43,3.88,7.52,4.39,12.27h-14.59c-.23-2.08-.86-3.89-1.9-5.42Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m59.04.84h14.34v24.67h24.54V.84h14.38v61.06h-14.38v-24.71h-24.54v24.71h-14.34V.84Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m116.43.84h42.29v11.72h-27.96v12.94h25.76v11.68h-25.76v12.99h27.96v11.72h-42.29V.84Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m216.25,48.24c-2.53,4.72-5.99,8.32-10.37,10.79-4.39,2.47-9.35,3.71-14.88,3.71s-10.46-1.24-14.86-3.71c-4.4-2.47-7.86-6.09-10.37-10.84-2.52-4.75-3.77-10.36-3.77-16.82s1.26-12.23,3.77-16.95c2.52-4.72,5.97-8.31,10.37-10.75,4.4-2.45,9.35-3.67,14.86-3.67s10.5,1.22,14.88,3.67,7.84,6.03,10.37,10.75,3.79,10.37,3.79,16.95-1.26,12.14-3.79,16.87Zm-12.59-27.09c-1.14-2.8-2.78-4.92-4.93-6.37-2.15-1.45-4.73-2.17-7.74-2.17s-5.54.72-7.7,2.17c-2.15,1.45-3.79,3.57-4.93,6.37-1.14,2.8-1.71,6.21-1.71,10.23s.57,7.43,1.71,10.23,2.78,4.92,4.93,6.37,4.72,2.17,7.7,2.17,5.59-.72,7.74-2.17,3.79-3.57,4.93-6.37,1.71-6.21,1.71-10.23-.57-7.43-1.71-10.23Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m275.16,61.9h-12.23l-24.71-35.84h-.46v35.84h-14.34V.84h12.44l24.46,35.8h.55V.84h14.29v61.06Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m317.2,16.36c-1.07-1.21-2.38-2.14-3.92-2.78-1.55-.65-3.33-.97-5.36-.97-2.98,0-5.57.73-7.78,2.19-2.21,1.46-3.91,3.6-5.1,6.41-1.2,2.81-1.79,6.17-1.79,10.08s.58,7.39,1.73,10.18c1.15,2.8,2.83,4.94,5.04,6.43,2.21,1.49,4.84,2.23,7.91,2.23,2.73,0,5.06-.46,7-1.39s3.41-2.23,4.41-3.92c1-1.69,1.5-3.67,1.5-5.95l2.7.34h-15.01v-10.58h26.14v8.01c0,5.34-1.15,9.98-3.44,13.91-2.29,3.94-5.45,6.95-9.49,9.05-4.03,2.09-8.67,3.14-13.89,3.14-5.76,0-10.86-1.26-15.28-3.79s-7.86-6.16-10.31-10.88-3.67-10.26-3.67-16.61,1.28-12.12,3.84-16.87c2.56-4.75,6.03-8.37,10.41-10.86s9.3-3.73,14.76-3.73c4.67,0,8.92.89,12.76,2.66s6.96,4.22,9.36,7.36c2.4,3.13,3.86,6.71,4.36,10.73h-14.59c-.45-1.71-1.21-3.18-2.28-4.39Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m335.01.84h15.81l9.4,40.44h.55L371.35.84h13.11l10.63,40.56h.51L405.04.84h15.81l-17.67,61.06h-13.96l-11.09-37.61h-.42l-11.13,37.61h-13.87L335.01.84Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m471.71,48.24c-2.53,4.72-5.99,8.32-10.37,10.79-4.39,2.47-9.35,3.71-14.88,3.71s-10.46-1.24-14.86-3.71c-4.4-2.47-7.86-6.09-10.37-10.84-2.52-4.75-3.77-10.36-3.77-16.82s1.26-12.23,3.77-16.95,5.97-8.31,10.37-10.75,9.35-3.67,14.86-3.67,10.5,1.22,14.88,3.67,7.84,6.03,10.37,10.75,3.79,10.37,3.79,16.95-1.26,12.14-3.79,16.87Zm-12.59-27.09c-1.14-2.8-2.78-4.92-4.93-6.37-2.15-1.45-4.73-2.17-7.74-2.17s-5.54.72-7.7,2.17c-2.15,1.45-3.79,3.57-4.93,6.37-1.14,2.8-1.71,6.21-1.71,10.23s.57,7.43,1.71,10.23c1.14,2.8,2.78,4.92,4.93,6.37,2.15,1.45,4.72,2.17,7.7,2.17s5.59-.72,7.74-2.17c2.15-1.45,3.79-3.57,4.93-6.37,1.14-2.8,1.71-6.21,1.71-10.23s-.57-7.43-1.71-10.23Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m532.4,48.24c-2.53,4.72-5.99,8.32-10.37,10.79-4.39,2.47-9.35,3.71-14.88,3.71s-10.46-1.24-14.86-3.71c-4.4-2.47-7.86-6.09-10.37-10.84-2.52-4.75-3.77-10.36-3.77-16.82s1.26-12.23,3.77-16.95,5.97-8.31,10.37-10.75,9.35-3.67,14.86-3.67,10.5,1.22,14.88,3.67,7.84,6.03,10.37,10.75,3.79,10.37,3.79,16.95-1.26,12.14-3.79,16.87Zm-12.59-27.09c-1.14-2.8-2.78-4.92-4.93-6.37-2.15-1.45-4.73-2.17-7.74-2.17s-5.54.72-7.7,2.17c-2.15,1.45-3.79,3.57-4.93,6.37-1.14,2.8-1.71,6.21-1.71,10.23s.57,7.43,1.71,10.23c1.14,2.8,2.78,4.92,4.93,6.37,2.15,1.45,4.72,2.17,7.7,2.17s5.59-.72,7.74-2.17c2.15-1.45,3.79-3.57,4.93-6.37,1.14-2.8,1.71-6.21,1.71-10.23s-.57-7.43-1.71-10.23Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m585.54,15.14c-.76-1.07-1.83-1.88-3.2-2.42-1.38-.55-3.05-.82-5.02-.82s-3.49.25-4.81.76c-1.32.51-2.32,1.21-2.99,2.11-.67.9-1.01,1.94-1.01,3.12-.06,1.77.69,3.18,2.23,4.24,1.55,1.05,3.82,1.93,6.83,2.64l5.31,1.18c6.13,1.35,10.75,3.52,13.87,6.51,3.12,2.99,4.71,6.91,4.76,11.74,0,3.82-.97,7.12-2.91,9.89s-4.71,4.89-8.31,6.37c-3.6,1.48-7.91,2.21-12.94,2.21s-9.6-.77-13.37-2.32c-3.77-1.55-6.68-3.87-8.73-6.98-2.05-3.11-3.13-6.96-3.25-11.58h13.83c.14,1.94.69,3.58,1.64,4.91.96,1.33,2.26,2.34,3.92,3.01,1.66.67,3.57,1.01,5.73,1.01,2.02,0,3.77-.28,5.23-.84,1.46-.56,2.58-1.33,3.35-2.32.77-.98,1.16-2.12,1.16-3.42,0-1.15-.35-2.15-1.05-2.99-.7-.84-1.77-1.57-3.2-2.19-1.43-.62-3.32-1.19-5.65-1.73l-6.41-1.52c-5.48-1.24-9.67-3.23-12.57-5.99-2.9-2.75-4.34-6.38-4.34-10.88,0-3.71,1.01-6.99,3.04-9.82,2.02-2.84,4.83-5.05,8.43-6.64,3.6-1.59,7.69-2.38,12.27-2.38s8.71.79,12.21,2.36c3.5,1.57,6.21,3.79,8.14,6.66,1.92,2.87,2.9,6.18,2.93,9.95h-13.79c-.14-1.49-.59-2.77-1.35-3.84Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m601.74.84h51.36v11.72h-18.59v49.33h-14.17V12.57h-18.59V.84Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m705.94,48.24c-2.53,4.72-5.99,8.32-10.37,10.79-4.39,2.47-9.35,3.71-14.88,3.71s-10.46-1.24-14.86-3.71c-4.4-2.47-7.86-6.09-10.37-10.84-2.52-4.75-3.77-10.36-3.77-16.82s1.26-12.23,3.77-16.95,5.97-8.31,10.37-10.75c4.4-2.45,9.35-3.67,14.86-3.67s10.5,1.22,14.88,3.67,7.84,6.03,10.37,10.75,3.79,10.37,3.79,16.95-1.26,12.14-3.79,16.87Zm-12.59-27.09c-1.14-2.8-2.78-4.92-4.93-6.37-2.15-1.45-4.73-2.17-7.74-2.17s-5.54.72-7.7,2.17c-2.15,1.45-3.79,3.57-4.93,6.37-1.14,2.8-1.71,6.21-1.71,10.23s.57,7.43,1.71,10.23c1.14,2.8,2.78,4.92,4.93,6.37,2.15,1.45,4.72,2.17,7.7,2.17s5.59-.72,7.74-2.17c2.15-1.45,3.79-3.57,4.93-6.37,1.14-2.8,1.71-6.21,1.71-10.23s-.57-7.43-1.71-10.23Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m713.11.84h24.96c4.58,0,8.54.82,11.87,2.47,3.33,1.64,5.89,3.99,7.67,7.04,1.79,3.05,2.68,6.64,2.68,10.77s-.91,7.65-2.72,10.63c-1.81,2.98-4.43,5.24-7.84,6.79-3.42,1.55-7.44,2.32-12.08,2.32h-16.02v-11.43h13.45c2.3,0,4.21-.3,5.71-.91,1.5-.6,2.65-1.52,3.44-2.74.79-1.22,1.18-2.78,1.18-4.66s-.39-3.54-1.18-4.81c-.79-1.26-1.95-2.22-3.48-2.87-1.53-.65-3.44-.97-5.71-.97h-7.59v49.42h-14.34V.84Zm49.29,61.06h-15.81l-14.8-27.87h15.39l15.22,27.87Z"
+                />
+                <path
+                  class="cls-1"
+                  d="m773.46.84l13.16,25.68h.51l13.11-25.68h16.11l-22.35,40.39v20.66h-14.29v-20.66L757.35.84h16.11Z"
+                />
+              </svg>
+              <p>
+                청우식품 SNS에서 제공하고 있는 다양한 이벤트와 혜택을
+                경험해보세요.
+              </p>
+            </div>
+          </div>
+
+          <div class="bgCir bgCir1">
+            <img src="img/lefttop.png" alt="썸네일사진" />
+          </div>
+          <div class="bgCir bgCir2">
+            <img src="img/leftbot.png" alt="썸네일사진" />
+          </div>
+          <div class="bgCir bgCir3">
+            <img src="img/righttop.png" alt="썸네일사진" />
+          </div>
+          <div class="bgCir bgCir4">
+            <img src="img/rightbot.png" alt="썸네일사진" />
+          </div>
+        </section>
+
+        <section class="mid">
+          <ul class="snack-floating snack-left">
+            <li><img src="img/prs.png" alt="제품사진" /></li>
+            <li><img src="img/mnkg.png" alt="제품사진" /></li>
+            <li><img src="img/ccst.png" alt="제품사진" /></li>
+            <li><img src="img/mnk.png" alt="제품사진" /></li>
+            <li><img src="img/ggb.png" alt="제품사진" /></li>
+            <li><img src="img/brn.png" alt="제품사진" /></li>
+          </ul>
+          <ul class="snack-floating snack-right">
+            <li><img src="img/brn.png" alt="제품사진" /></li>
+            <li><img src="img/ggb.png" alt="제품사진" /></li>
+            <li><img src="img/mnk.png" alt="제품사진" /></li>
+            <li><img src="img/ccst.png" alt="제품사진" /></li>
+            <li><img src="img/mnkg.png" alt="제품사진" /></li>
+            <li><img src="img/prs.png" alt="제품사진" /></li>
+          </ul>
+          <div class="mid-wrapper">
+            <div class="carousel-container">
+              <ul class="youtube">
+                <li>
+                  <div>
+                    <img src="img/videoframe_5709.png" alt="썸네일사진" />
+                  </div>
+                  <i class="fa-brands fa-youtube"></i>
+                </li>
+                <li>
+                  <div>
+                    <img src="img/rightbot.png" alt="썸네일사진" />
+                  </div>
+                  <i class="fa-brands fa-youtube"></i>
+                </li>
+                <li>
+                  <div>
+                    <img src="img/cpc.png" alt="썸네일사진" />
+                  </div>
+                  <i class="fa-brands fa-youtube"></i>
+                </li>
+                <li>
+                  <div>
+                    <img src="img/cdc.png" alt="썸네일사진" />
+                  </div>
+                  <i class="fa-brands fa-youtube"></i>
+                </li>
+                <li>
+                  <div>
+                    <img src="img/videoframe_6020.png" alt="썸네일사진" />
+                  </div>
+                  <i class="fa-brands fa-youtube"></i>
+                </li>
+                <li>
+                  <div>
+                    <img src="img/videoframe_22944.png" alt="썸네일사진" />
+                  </div>
+                  <i class="fa-brands fa-youtube"></i>
+                </li>
+              </ul>
+            </div>
+
+            <div class="carousel-container">
+              <ul class="sns">
+                <li>
+                  <img src="img/sns1.1.png" alt="sns사진" />
+                  <div>
+                    <span>드럼스틱 말고 참깨스틱</span>
+                  </div>
+                </li>
+                <li>
+                  <img src="img/sns2.1.png" alt="sns사진" />
+                  <div>
+                    <span>감자떡 쿠키 출시</span>
+                  </div>
+                </li>
+                <li>
+                  <img src="img/sns3.1.png" alt="sns사진" />
+                  <div>
+                    <span>꿀조합 궁금한사람?</span>
+                  </div>
+                </li>
+                <li>
+                  <img src="img/sns4.1.png" alt="sns사진" />
+                  <div>
+                    <span>단짠단짠 닭다리 스낵</span>
+                  </div>
+                </li>
+                <li>
+                  <img src="img/sns5.1.png" alt="sns사진" />
+                  <div>
+                    <span>꿀 먹은 꽈배기 미니 출시</span>
+                  </div>
+                </li>
+                <li>
+                  <img src="img/sns6.1.png" alt="sns사진" />
+                  <div>
+                    <span>상큼꼬숩 파인애플 그랑쉘</span>
+                  </div>
+                </li>
+                <li>
+                  <img src="img/sns7.1.png" alt="sns사진" />
+                  <div>
+                    <span>딸기쿠키 권위자는 누구?</span>
+                  </div>
+                </li>
+                <li>
+                  <img src="img/sns8.1.png" alt="sns사진" />
+                  <div>
+                    <span>호떡 대신 찰호떡 쿠키</span>
+                  </div>
+                </li>
+                <li>
+                  <img src="img/sns9.1.png" alt="sns사진" />
+                  <div>
+                    <span>바삭달콤 델로스</span>
+                  </div>
+                </li>
+                <li>
+                  <img src="img/sns10.1.png" alt="sns사진" />
+                  <div>
+                    <span>풍미가득! 딸기 vs 바닐라</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="playBox">
+              <video src="img/play_1.mp4" autoplay muted loop></video>
+            </div>
+          </div>
+        </section>
+
+        <section class="bot">
+          <div class="imgBox">
+            <div class="botWord"></div>
+            <img src="img/c3talkver1.png" />
+          </div>
+          <ul class="snsBox">
+            <li>
+              <span>청우식품 카카오톡 채널 친구 추가하기</span>
+              <div class="snsImg1">
+                <i class="fa-brands fa-kakao-talk"></i>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </li>
+            <li>
+              <span>청우식품 유튜브 채널 구독하기</span>
+              <div class="snsImg2">
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="img/logo_wh.png" alt="Cheongwoo logo" />
+          </div>
+          <address class="footer-address">
+            <p>본사: 경기도 포천시 영중면 먼재길 129</p>
+            <p>
+              서울사무소: 서울특별시 성북구 성북로 11 청우빌딩 4층 (한성대입구역
+              5번 출구)
+            </p>
+            <p>대표전화: 02-942-0111 | FAX: 02-941-2608</p>
+            <p>&copy; 2019 CHEONGWOO CO.,LTD. ALL RIGHTS RESERVED.</p>
+          </address>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-contact">
+            <p class="customer-service">고객센터: 080-039-8585</p>
+            <p class="service-hours">
+              이용시간: 평일 오전 9시 ~ 오후 5시 (주말, 공휴일 휴무)
+            </p>
+          </div>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+          <div class="footer-ck">
+            <img src="img/footer_ck.png" alt="쿠키" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      $(function () {
+        /* ==========================
+       1. TOP 문구 타이핑 효과
+       ========================== */
+        const text =
+          "청우식품 SNS에서 제공하고 있는 다양한 이벤트와 혜택을 경험해보세요.";
+        const textElement = $(".top .word p");
+        textElement.text("");
+
+        let index = 0;
+        function typeWriter() {
+          if (index < text.length) {
+            textElement.text(textElement.text() + text.charAt(index));
+            index++;
+            setTimeout(typeWriter, 50); // 타이핑 속도
+          }
+        }
+        // 타이핑 시작
+        setTimeout(typeWriter, 500);
+
+        /* ==========================
+       2. TOP 배경 동그라미 떠다니는 효과
+       ========================== */
+        gsap.to(".bgCir1", {
+          y: 30,
+          x: 20,
+          rotation: 5,
+          duration: 3,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+
+        gsap.to(".bgCir2", {
+          y: -25,
+          x: -15,
+          rotation: -8,
+          duration: 2.5,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: 0.3,
+        });
+
+        gsap.to(".bgCir3", {
+          y: 35,
+          x: -25,
+          rotation: 10,
+          duration: 3.5,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: 0.6,
+        });
+
+        gsap.to(".bgCir4", {
+          y: -30,
+          x: 20,
+          rotation: -5,
+          duration: 2.8,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: 0.9,
+        });
+
+        // bgCir 마우스 호버 스케일
+        $(".bgCir").each(function () {
+          const circle = this;
+
+          $(this).hover(
+            function () {
+              gsap.to(circle, {
+                scale: 1.15,
+                duration: 0.4,
+                ease: "back.out(1.7)",
+              });
+            },
+            function () {
+              gsap.to(circle, {
+                scale: 1,
+                duration: 0.4,
+                ease: "elastic.out(1, 0.3)",
+              });
+            }
+          );
+        });
+
+        /* ==========================
+       3. 동영상 박스 스크롤 등장
+       ========================== */
+        gsap.from(".playBox video", {
+          scale: 0.8,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".playBox",
+            start: "top 80%",
+            end: "top 50%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        /* ==========================
+       4. 과자 애니메이션 (반응형)
+          - PC/태블릿: 세로로 위로 올라감
+          - 모바일: 비디오 위/아래에서 가로로 흐름
+       ========================== */
+
+        // 세로로 올라가는 버전
+        function snackFloatVertical(selector, reverseDelay = false) {
+          const items = gsap.utils.toArray(selector);
+          const count = items.length;
+
+          items.forEach((item, i) => {
+            const orderIndex = reverseDelay ? count - 1 - i : i;
+            const baseDelay = orderIndex * 0.7; // 순차적으로 딜레이
+
+            // 시작 위치
+            gsap.set(item, {
+              y: 150,
+              opacity: 0,
+            });
+
+            // 올라오면서 나타났다가, 위에서 사라지고 다시 아래로 리셋
+            gsap.to(item, {
+              keyframes: [
+                { y: 40, opacity: 1, duration: 1.2, ease: "sine.out" },
+                { y: -140, opacity: 1, duration: 3, ease: "none" },
+                { y: -220, opacity: 0, duration: 1.3, ease: "sine.in" },
+              ],
+              repeat: -1,
+              delay: baseDelay,
+            });
+          });
+        }
+
+        // 가로로 흐르는 버전 (모바일용)
+        function snackFloatHorizontal(selector, reverse = false) {
+          const items = gsap.utils.toArray(selector);
+          const count = items.length;
+
+          items.forEach((item, i) => {
+            const orderIndex = reverse ? count - 1 - i : i;
+            const baseDelay = orderIndex * 0.6;
+
+            // 시작 위치: 한쪽 바깥에서 등장 (x → xPercent로 변경)
+            gsap.set(item, {
+              xPercent: reverse ? 120 : -120, // ✅ 화면 비율 기준이라 overflow 안 생김
+              opacity: 0,
+            });
+
+            gsap.to(item, {
+              keyframes: [
+                {
+                  xPercent: reverse ? 40 : -40, // ✅ 자연스럽게 중앙쪽으로 들어옴
+                  opacity: 1,
+                  duration: 1.1,
+                  ease: "sine.out",
+                },
+                {
+                  xPercent: reverse ? -40 : 40,
+                  opacity: 1,
+                  duration: 3,
+                  ease: "none",
+                },
+                {
+                  xPercent: reverse ? -120 : 120,
+                  opacity: 0,
+                  duration: 1.2,
+                  ease: "sine.in",
+                },
+              ],
+              repeat: -1,
+              delay: baseDelay,
+            });
+          });
+        }
+        // GSAP matchMedia로 반응형 분기
+
+        let mm = gsap.matchMedia();
+
+        // PC (1220px 이상)만 세로 이동
+        mm.add("(min-width: 1220px)", () => {
+          snackFloatVertical(".snack-left li", false); // 왼쪽 정순
+          snackFloatVertical(".snack-right li", true); // 오른쪽 역순
+        });
+
+        // 태블릿 + 모바일 (1220px 미만): 가로로 흐름
+        mm.add("(max-width: 1219px)", () => {
+          snackFloatHorizontal(".snack-left li", false); // 위쪽 줄
+          snackFloatHorizontal(".snack-right li", true); // 아래쪽 줄
+        });
+        /* ==========================
+       5. BOT 캐릭터 이미지 애니메이션
+       ========================== */
+
+        // 아래에서 위로 스르륵 등장
+        gsap.from(".bot .imgBox img", {
+          y: 200,
+          opacity: 0,
+          duration: 1.4,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".bot",
+            start: "top 80%",
+            end: "top 60%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        // 좌우로 살짝살짝 움직이는 동작
+        gsap.to(".bot .imgBox img", {
+          x: -40,
+          duration: 4,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+        });
+      });
+    </script>
+  </body>
+</html>
