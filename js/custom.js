@@ -1,5 +1,5 @@
 $(function () {
-  let index = 0;
+  let index4 = 0;
   const total = $(".snsThumb li").length;
   let con4i = document.querySelector(".btn .index");
   let list = document.querySelector(".snsThumb li");
@@ -7,41 +7,41 @@ $(function () {
   $(".next").on("click", function () {
     let wid = list.offsetWidth;
     // console.log(wid);
-    index++;
-    if (index >= total) {
-      index = 0;
+    index4++;
+    if (index4 >= total) {
+      index4 = 0;
     }
     // console.log(index);
     $(".snsThumb li").animate(
-      { transform: `translateX(${-(wid + 60) * index}px)` },
+      { transform: `translateX(${-(wid + 60) * index4}px)` },
       function () {
         //   $(".snsThumb").css({ transform: "translateX(0)" });
       }
     );
     $(".snsTxt li").removeClass("active");
-    $(".snsTxt li").eq(index).addClass("active");
-    con4i.textContent = `${index + 1}`;
+    $(".snsTxt li").eq(index4).addClass("active");
+    con4i.textContent = `${index4 + 1}`;
   });
 
   $(".prev").on("click", function () {
     let wid = list.offsetWidth;
     // console.log(wid);
-    index--;
-    if (index < 0) {
-      index = total - 1;
+    index4--;
+    if (index4 < 0) {
+      index4 = total - 1;
     }
     // console.log(index);
     $(".snsThumb li").animate(
-      { transform: `translateX(${-(wid + 60) * index}px)` },
+      { transform: `translateX(${-(wid + 60) * index4}px)` },
       function () {
         //   $(".snsThumb").css({ transform: "translateX(0)" });
       }
     );
     $(".snsTxt li").removeClass("active");
-    $(".snsTxt li").eq(index).addClass("active");
-    con4i.textContent = `${index + 1}`;
+    $(".snsTxt li").eq(index4).addClass("active");
+    con4i.textContent = `${index4 + 1}`;
   });
-  con4i.textContent = `${index + 1}`;
+  con4i.textContent = `${index4 + 1}`;
 
   /*---------------*/
   const $images = $(".image");
@@ -77,7 +77,7 @@ $(function () {
     sets.hide();
 
     // 클릭한 이미지에 해당하는 세트만 표시
-    const currentSet = sets.eq(index).fadeIn(300);
+    const currentSet = sets.eq(index - 1).fadeIn(300);
 
     // 기존 하이라이트 제거
     $(".cookie-highlight-wrapper").removeClass("cookie-highlight-wrapper");

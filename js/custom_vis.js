@@ -1,19 +1,12 @@
-// 화면 사이즈 체크
-const isMobile = window.matchMedia("(max-width: 600px)");
-// about-us 섹션 요소 선택
+// ======================
+// About-us 섹션
+// ======================
 const about = document.querySelector(".con01");
 const plus = about.querySelector(".plus");
 const logo = about.querySelector(".logo");
 const texts = about.querySelectorAll(".list.text div");
 
-// JS에서 opacity 초기화 제거, CSS에서 .plus/.logo 기본 opacity:0
-window.addEventListener("load", () => {
-  texts.forEach((t) => t.classList.remove("active"));
-  // texts[0].classList.add("active");
-  about.style.backgroundColor = "#f45b5b";
-});
-
-// 2️⃣ 스크롤 시 텍스트 + 이미지 효과
+// 스크롤 시 텍스트 + 이미지 효과
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
   const aboutTop = about.offsetTop;
@@ -31,7 +24,7 @@ window.addEventListener("scroll", () => {
     // 텍스트 활성화
     let activeIndex;
     if (ratio < 0.2) {
-      activeIndex = -1; //글자 안보이게
+      activeIndex = -1; // 글자 안보이게
       about.style.backgroundColor = "#f45b5b";
     } else if (ratio < 0.45) {
       activeIndex = 0;
@@ -45,11 +38,20 @@ window.addEventListener("scroll", () => {
     }
 
     texts.forEach((t, i) => {
-      if (i === activeIndex) t.classList.add("active");
-      else t.classList.remove("active");
+      if (i === activeIndex) {
+        t.classList.add("active");
+        t.classList.remove("exit");
+      } else if (t.classList.contains("active")) {
+        // 이전에 active였던 요소는 왼쪽으로 exit
+        t.classList.remove("active");
+        t.classList.add("exit");
+      } else if (!t.classList.contains("exit")) {
+        // 아직 안나온 요소는 오른쪽에서 대기
+        t.classList.remove("active", "exit");
+      }
     });
 
-    //섹션 진입 시 이미지 보여짐
+    // 섹션 진입 시 이미지 보여짐
     plus.classList.add("on");
     logo.classList.add("on");
   } else {
@@ -75,6 +77,7 @@ function setVideo(index) {
   videoEl.play();
   updateDots();
 }
+
 // dot 상태
 function updateDots() {
   dots.forEach((dot, i) => dot.classList.toggle("active", i === currentVideo));
@@ -92,7 +95,7 @@ dots.forEach((dot) => {
     setVideo(index);
   });
 });
-// 초기 상태
 
+// 초기 상태
 updateDots();
 setVideo(currentVideo);
