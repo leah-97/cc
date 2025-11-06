@@ -1,7 +1,7 @@
 $(function () {
   let index = 0;
   const total = $(".snsThumb li").length;
-  let i = document.querySelector(".btn .index");
+  let con4i = document.querySelector(".btn .index");
   let list = document.querySelector(".snsThumb li");
 
   $(".next").on("click", function () {
@@ -20,7 +20,7 @@ $(function () {
     );
     $(".snsTxt li").removeClass("active");
     $(".snsTxt li").eq(index).addClass("active");
-    i.textContent = `${index + 1}`;
+    con4i.textContent = `${index + 1}`;
   });
 
   $(".prev").on("click", function () {
@@ -39,9 +39,9 @@ $(function () {
     );
     $(".snsTxt li").removeClass("active");
     $(".snsTxt li").eq(index).addClass("active");
-    i.textContent = `${index + 1}`;
+    con4i.textContent = `${index + 1}`;
   });
-  i.textContent = `${index + 1}`;
+  con4i.textContent = `${index + 1}`;
 
   /*---------------*/
   const $images = $(".image");
@@ -50,8 +50,8 @@ $(function () {
   $images.on("click", function (e) {
     e.preventDefault();
 
-    const i = $images.index(this);
-    const $target = $sets.eq(i);
+    const con2i = $images.index(this);
+    const $target = $sets.eq(con2i);
 
     // 이미 떠 있는 제품이면 토글로 끄기
     if ($target.is(":visible")) {
