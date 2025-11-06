@@ -1061,6 +1061,7 @@ body {
     position: absolute;
     top: 20px;
     right: 50px;
+
     cursor: pointer;
   }
   /* 헤더 햄버거바 모드 */
@@ -1069,7 +1070,7 @@ body {
     font-size: 28px;
   }
 
-  /* visual, 비디오 전체 화면 */
+  /*visual, 비디오 전체 화면 */
   .video-full {
     padding: 120px 0;
     height: 50vw;
@@ -1601,8 +1602,7 @@ body {
     cursor: pointer;
     font-size: 28px;
   }
-
-  /* visual, 비디오 전체 화면 */
+  /*visual, 비디오 전체 화면 */
   .video-full {
     width: 100vw;
     height: 30vh;
