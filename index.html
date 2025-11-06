@@ -42,32 +42,25 @@
   <body>
     <!-- header -->
     <header>
-      <ul id="menu">
-        <li>
-          <h1>
-            <a href="index.html"> <img src="img/logo.png" alt="로고" /></a>
-          </h1>
-        </li>
-        <<<<<<< HEAD
-        <li>
-          <h2><a href="company.html">회사소개</a></h2>
-        </li>
-        <li>
-          <h2><a href="product.html">제품소개</a></h2>
-        </li>
-        <li>
-          <h2><a href="news.html">회사소식</a></h2>
-        </li>
-        <li>
-          <h2><a href="purchase.html">대량구매</a></h2>
-        </li>
-        =======
-        <li><a href="#">회사소개</a></li>
-        <li><a href="#">제품소개</a></li>
-        <li><a href="#">회사소식</a></li>
-        <li><a href="#">대량구매</a></li>
-        >>>>>>> 59c3ad70debccdaa42df201cc7d04206f1778655
-      </ul>
+      <nav>
+        <h1>
+          <a href="index.html"
+            ><img class="head_w on" src="img/logo_white.png" alt="로고" /><img
+              class="head_r"
+              src="img/logo_red.png"
+          /></a>
+        </h1>
+        <!-- 햄버거바 -->
+        <div class="bars"><i class="fa-solid fa-bars"></i></div>
+        <ul id="menu">
+          <li><a href="#">회사소개</a></li>
+          <li><a href="#">제품소개</a></li>
+          <li><a href="#">회사소식</a></li>
+          <li><a href="#">대량구매</a></li>
+          <!-- 반응형 x버튼 -->
+          <li class="hclose"><i class="fa-solid fa-xmark"></i></li>
+        </ul>
+      </nav>
     </header>
     <!-- header -->
     <div id="visual">
@@ -141,7 +134,7 @@
             </div>
           </div>
           <div class="image">
-            <img src="img/ycb.png" alt="아꾸뿔레" />
+            <img src="img/ycb.png" />
 
             <div class="info">
               <h3>유자치즈케이크</h3>
@@ -352,34 +345,34 @@
 
       <ul class="botLogo">
         <li>
-          <img src="img/제목 없음.png" alt="로고" />
+          <img src="img/logo_bot.png" alt="로고" />
         </li>
         <li>
-          <img src="img/제목 없음.png" alt="로고" />
+          <img src="img/logo_bot.png" alt="로고" />
         </li>
         <li>
-          <img src="img/제목 없음.png" alt="로고" />
+          <img src="img/logo_bot.png" alt="로고" />
         </li>
         <li>
-          <img src="img/제목 없음.png" alt="로고" />
+          <img src="img/logo_bot.png" alt="로고" />
         </li>
         <li>
-          <img src="img/제목 없음.png" alt="로고" />
+          <img src="img/logo_bot.png" alt="로고" />
         </li>
         <li>
-          <img src="img/제목 없음.png" alt="로고" />
+          <img src="img/logo_bot.png" alt="로고" />
         </li>
         <li>
-          <img src="img/제목 없음.png" alt="로고" />
+          <img src="img/logo_bot.png" alt="로고" />
         </li>
         <li>
-          <img src="img/제목 없음.png" alt="로고" />
+          <img src="img/logo_bot.png" alt="로고" />
         </li>
         <li>
-          <img src="img/제목 없음.png" alt="로고" />
+          <img src="img/logo_bot.png" alt="로고" />
         </li>
         <li>
-          <img src="img/제목 없음.png" alt="로고" />
+          <img src="img/logo_bot.png" alt="로고" />
         </li>
       </ul>
     </section>
@@ -529,6 +522,20 @@
     <script>
       const images = gsap.utils.toArray(".image");
       const container = document.querySelector(".con02_con");
+
+      $(window).on("scroll", function () {
+        let space = $(window).scrollTop();
+        console.log(space);
+        if (space > 0) {
+          $("header").addClass("on");
+          $("header .head_w").removeClass("on");
+          $("header .head_r").addClass("on");
+        } else {
+          $("header .head_r").removeClass("on");
+          $("header .head_w").addClass("on");
+          $("header").removeClass("on");
+        }
+      });
 
       // 이건 그대로. path는 예전 400x400 기준
       gsap.set(images, {
