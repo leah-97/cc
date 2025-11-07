@@ -483,7 +483,7 @@
         <!-- 왼쪽 섹션: 로고 + 주소 -->
         <div class="footer-left">
           <div class="footer-logo">
-            <img src="img/logo_wh.png" alt="Cheongwoo logo" />
+            <img src="img/logo_white.png" alt="Cheongwoo logo" />
           </div>
           <address class="footer-address">
             <p>본사: 경기도 포천시 영중면 먼재길 129</p>
@@ -522,20 +522,6 @@
     <script>
       const images = gsap.utils.toArray(".image");
       const container = document.querySelector(".con02_con");
-
-      $(window).on("scroll", function () {
-        let space = $(window).scrollTop();
-        console.log(space);
-        if (space > 0) {
-          $("header").addClass("on");
-          $("header .head_w").removeClass("on");
-          $("header .head_r").addClass("on");
-        } else {
-          $("header .head_r").removeClass("on");
-          $("header .head_w").addClass("on");
-          $("header").removeClass("on");
-        }
-      });
 
       // 이건 그대로. path는 예전 400x400 기준
       gsap.set(images, {
