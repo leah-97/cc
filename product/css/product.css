@@ -912,6 +912,8 @@ margin-top: 300px;
     text-shadow: 3px 3px 3px rgb(182, 169, 169);
   }
   .con03 .snack {
+    max-width: 1500px;
+    margin: 0px auto;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
