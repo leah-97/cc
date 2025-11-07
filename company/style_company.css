@@ -584,6 +584,95 @@ body {
   .con03 .modal .modalBox span {
     color: #000;
   }
+
+  /* footer */
+  /* 푸터 전체 */
+  footer {
+    width: 100%;
+    background: #f45b5b;
+    color: #fff;
+    padding: 60px 40px 40px;
+    box-sizing: border-box;
+  }
+
+  .footer-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .footer-logo img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  .footer-address {
+    font-style: normal;
+    line-height: 1.8;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .footer-address p {
+    margin-bottom: 8px;
+  }
+
+  .footer-right {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+  }
+
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+
+  .customer-service {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .service-hours {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .footer-social {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .footer-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .footer-ck img {
+    width: 60px;
+  }
 }
 @media (max-width: 1220px) and (min-width: 600px) {
   /* header */
@@ -1186,6 +1275,92 @@ body {
   .con03 .modal .modalBox span {
     color: #000;
   }
+  /* Footer */
+  footer {
+    background: #f45b5b;
+    color: #fff;
+    padding: 60px 40px 40px;
+    box-sizing: border-box;
+  }
+
+  .footer-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* 가로로 배치 */
+    align-items: flex-start; /* 위쪽 정렬 */
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    flex: 1;
+    min-width: auto;
+  }
+
+  .footer-logo img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  .footer-address {
+    font-style: normal;
+    line-height: 1.8;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .footer-address p {
+    margin-bottom: 8px;
+  }
+
+  .footer-right {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+  }
+
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+
+  .customer-service {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .service-hours {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .footer-social {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .footer-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .footer-ck img {
+    width: 60px;
+  }
 }
 @media (max-width: 600px) {
   /* header */
@@ -1787,5 +1962,87 @@ body {
   }
   .con03 .modal .modalBox span {
     color: #000;
+  }
+
+  /* Footer */
+  footer {
+    background: #f45b5b;
+    color: #fff;
+    padding: 60px 40px 40px;
+    box-sizing: border-box;
+  }
+
+  .footer-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: 1;
+    text-align: center;
+    min-width: 100%;
+  }
+
+  .footer-logo img {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+
+  .footer-address {
+    font-style: normal;
+    line-height: 1.8;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .footer-address p {
+    margin-bottom: 8px;
+  }
+
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+
+  .customer-service {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .service-hours {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .footer-social {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .footer-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .footer-ck img {
+    width: 60px;
   }
 }

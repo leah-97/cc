@@ -66,49 +66,47 @@ $(function () {
   con4i.textContent = `${index4 + 1}`;
 
   /*---------------*/
-  const $images = $(".image");
-  const $sets = $(".deco .set");
+  $(function () {
+    const $images = $(".image");
+    const $sets = $(".deco .set");
 
-  $images.on("click", function (e) {
-    e.preventDefault();
+    $images.on("click", function (e) {
+      e.preventDefault();
+      const i = $images.index(this);
+      const $target = $sets.eq(i);
 
-    const con2i = $images.index(this);
-    const $target = $sets.eq(con2i);
+      if ($target.is(":visible")) {
+        $target.fadeOut(200).removeClass("active");
+        $images.removeClass("active");
+        return;
+      }
 
-    // 이미 떠 있는 제품이면 토글로 끄기
-    if ($target.is(":visible")) {
-      $target.fadeOut(200).removeClass("active");
+      $sets.filter(":visible").hide().removeClass("active");
+      $target.fadeIn(200).addClass("active");
       $images.removeClass("active");
-      return;
-    }
-
-    // 다른 제품 선택: 나머지는 모두 끄고 이것만 켜기
-    $sets.filter(":visible").hide().removeClass("active");
-    $target.fadeIn(200).addClass("active");
-
-    $images.removeClass("active");
-    $(this).addClass("active");
+      $(this).addClass("active");
+    });
   });
 
   // 클릭 이벤트 추가
-  $(".image").on("click", function () {
-    const index = $(this).index(); // 몇 번째 이미지인지 확인
-    const sets = $(".deco > .set");
+  // $(".image").on("click", function () {
+  //   const index = $(this).index(); // 몇 번째 이미지인지 확인
+  //   const sets = $(".deco > .set");
 
-    // 모든 세트 숨김
-    sets.hide();
+  //   // 모든 세트 숨김
+  //   sets.hide();
 
-    // 클릭한 이미지에 해당하는 세트만 표시
-    const currentSet = sets.eq(index - 1).fadeIn(300);
+  //   // 클릭한 이미지에 해당하는 세트만 표시
+  //   const currentSet = sets.eq(index - 1).fadeIn(300);
 
-    // 기존 하이라이트 제거
-    $(".cookie-highlight-wrapper").removeClass("cookie-highlight-wrapper");
+  //   // 기존 하이라이트 제거
+  //   $(".cookie-highlight-wrapper").removeClass("cookie-highlight-wrapper");
 
-    // 선택된 세트 내 쿠키 이미지에 하이라이트 효과 추가
-    currentSet.find("img").each(function () {
-      $(this).wrap('<div class="cookie-highlight-wrapper"></div>');
-    });
-  });
+  //   // 선택된 세트 내 쿠키 이미지에 하이라이트 효과 추가
+  //   currentSet.find("img").each(function () {
+  //     $(this).wrap('<div class="cookie-highlight-wrapper"></div>');
+  //   });
+  // });
 
   $(".botLogo").simplyScroll({
     speed: 1,

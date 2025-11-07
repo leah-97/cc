@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>청우식품</title>
     <link rel="stylesheet" href="css/news.css" />
     <link
       rel="stylesheet"
@@ -19,15 +19,25 @@
   </head>
   <body>
     <header>
-      <div id="menu">
+      <nav>
         <h1>
-          <a href="../index.html"> <img src="img/logo.png" alt="로고" /></a>
+          <a href="index.html"
+            ><img class="head_w on" src="img/logo_white.png" alt="로고" /><img
+              class="head_r"
+              src="img/logo_red.png"
+          /></a>
         </h1>
-        <h2 class="company"><a href="#">회사소개</a></h2>
-        <h2 class="company"><a href="#">제품소개</a></h2>
-        <h2 class="company"><a href="#">회사소식</a></h2>
-        <h2 class="company"><a href="#">대량구매</a></h2>
-      </div>
+        <!-- 햄버거바 -->
+        <div class="bars"><i class="fa-solid fa-bars"></i></div>
+        <ul id="menu">
+          <li><a href="../company/company.html">회사소개</a></li>
+          <li><a href="../product/product.html">제품소개</a></li>
+          <li class="on"><a href="news.html">회사소식</a></li>
+          <li><a href="../Bulk purchase/purchase.html">대량구매</a></li>
+          <!-- 반응형 x버튼 -->
+          <li class="hclose"><i class="fa-solid fa-xmark"></i></li>
+        </ul>
+      </nav>
     </header>
     <div id="wrap">
       <div class="news">
@@ -275,9 +285,10 @@
     </div>
     <footer>
       <div class="footer-container">
+        <!-- 왼쪽 섹션: 로고 + 주소 -->
         <div class="footer-left">
           <div class="footer-logo">
-            <img src="img/logo_wh.png" alt="Cheongwoo logo" />
+            <img src="img/logo_white.png" alt="Cheongwoo logo" />
           </div>
           <address class="footer-address">
             <p>본사: 경기도 포천시 영중면 먼재길 129</p>
@@ -290,6 +301,7 @@
           </address>
         </div>
 
+        <!-- 오른쪽 섹션: 고객센터 + 이용시간 + SNS -->
         <div class="footer-right">
           <div class="footer-contact">
             <p class="customer-service">고객센터: 080-039-8585</p>
@@ -298,8 +310,12 @@
             </p>
           </div>
           <div class="footer-social">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/cwfood86/?locale=ko_KR"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/cwfood/"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
           </div>
           <div class="footer-ck">
             <img src="img/footer_ck.png" alt="쿠키" />
