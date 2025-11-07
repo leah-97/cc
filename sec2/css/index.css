@@ -1,0 +1,578 @@
+/* 베스트 상품 소개 */
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/*h2*/
+h2 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: red;
+  z-index: 100;
+}
+
+.container {
+  width: 1000px;
+  height: 1000px;
+  bottom: -60%;
+  position: relative;
+}
+
+/* 여기! 실제로 도는 것만 커지게 하는 레이어 */
+.orbit {
+  position: absolute;
+  inset: 0;
+  transform: scale(1);
+  transform-origin: center;
+}
+
+svg {
+  opacity: 0;
+}
+
+/*img*/
+.image {
+  height: 400px;
+  width: 400px;
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: 0.3s;
+}
+
+.image:hover img {
+  transform: translateY(-10%) scale(1.1);
+  filter: brightness(50%);
+}
+
+.image.on:hover {
+  z-index: 10;
+}
+
+.image:hover .info {
+  opacity: 1;
+}
+
+/*info*/
+.info {
+  position: absolute;
+  inset: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  color: #fff;
+  opacity: 0;
+  transition: 0.3s;
+  word-break: keep-all;
+  transform: translateY(-10%);
+}
+
+.info:hover p {
+  z-index: 10;
+}
+
+.info p {
+  font-size: 20px;
+}
+
+.info h3 {
+  margin: 10px 0px;
+  font-size: 27px;
+}
+
+/* 제품 박스 클릭시에 뜨는 쿠키 이미지 */
+/*deco*/
+.deco {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+}
+
+/* 이미지 감싼 부모 */
+.left,
+.right {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+}
+
+/* 초코파이 찰떡 쿠키 위치 따로 */
+.left1.choco {
+  left: 2%;
+  top: -1%;
+}
+
+.right3.choco {
+  right: 2%;
+  top: 20%;
+}
+
+/* 찰떡 쿠키 크기 위치 따로 */
+.left.left2.oriC,
+.right.right2.oriC {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+}
+
+.left2.oriC {
+  left: 5%;
+  top: 15%;
+}
+
+.right2.oriC {
+  right: 5%;
+  top: 2%;
+}
+
+/* 유자치즈케이크 이미지크기 위치 따로 */
+.left.left3.yuzuC,
+.right.right1.yuzuC {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+}
+
+.left3.yuzuC {
+  left: 2%;
+  top: 15%;
+}
+
+.right1.yuzuC {
+  right: 5%;
+  top: 3%;
+}
+
+/* 그랑쉘 딸기 이미지 크기 위치 따로 */
+.left.left3.gs,
+.right.right1.gs {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+}
+
+.left3.gs {
+  left: -2%;
+  top: 15%;
+}
+
+.right1.gs {
+  right: 3%;
+  top: -6%;
+}
+
+/* 찰떡 호떡 쿠키 크기 위치 따로*/
+.left.left2.hd,
+.right.right2.hd {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+}
+
+.right2.hd {
+  right: 3%;
+  top: 2%;
+}
+
+/* 브루느와 크기 따로 */
+.left.left3.br,
+.right.right1.br {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+}
+
+/* 그랑쉘 파인애플 크기 위치 따로 */
+.left.left1.gp,
+.right.right3.gp {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+}
+
+.left1.gp {
+  top: 10%;
+  left: 5%;
+}
+
+.right3.gp {
+  right: -2%;
+  top: 15%;
+}
+
+/* 쫀득 과일칩 크키 따로 */
+.left.left2.cf,
+.right.right2.cf {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+}
+
+/* 그랑쉘 사과 크기 따로 */
+.left.left1.ga,
+.right.right3.ga {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+}
+
+/*이미지 자체 */
+.left img,
+.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 찰떡 초코파이, 쫀득 초코쿠키, 그랑쉘 파인애플, 그랑쉘 사과*/
+.left1 {
+  left: 5%;
+  top: -5%;
+}
+
+.right3 {
+  right: 5%;
+  top: 20%;
+}
+
+/* 찰떡쿠키, 찰떡 호떡쿠키, 쫀득과일칩 */
+.left2 {
+  left: 3%;
+  top: 10%;
+}
+
+.right2 {
+  right: 3%;
+  top: 10%;
+}
+
+/* 유자 치즈케이크, 브루느와, 그랑쉘 딸기 */
+.left3 {
+  left: 5%;
+  top: 25%;
+}
+
+.right1 {
+  right: 5%;
+  top: 2%;
+}
+
+/*set*/
+.deco > .set {
+  display: none;
+}
+
+/* set이 active일 때만 두 원에 점선 */
+.deco .set.active .left::after,
+.deco .set.active .right::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border: 8px dashed #aaa;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: dashPulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes dashPulse {
+  from {
+    opacity: 0.3;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(0.7);
+  }
+}
+
+/* ============================================
+   모바일 슬라이드 스타일
+============================================ */
+
+.mobile-slider {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-out;
+  touch-action: pan-y;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.slide-image {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.slide-info {
+  text-align: center;
+  color: #333;
+  padding: 0 20px;
+}
+
+.slide-info h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: red;
+}
+
+.slide-info p {
+  font-size: 16px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* 슬라이드 인디케이터 */
+.slider-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.indicator.active {
+  background: red;
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* 슬라이드 버튼 */
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider-button:active {
+  background: rgba(255, 255, 255, 1);
+}
+
+.slider-button.prev {
+  left: 10px;
+}
+
+.slider-button.next {
+  right: 10px;
+}
+
+/* ============================================
+   반응형 미디어 쿼리
+============================================ */
+
+/* 모바일 (600px 이하) - 슬라이드 방식 */
+@media (max-width: 600px) {
+  /* 기존 원형 레이아웃 숨김 */
+  .container,
+  .orbit,
+  .deco {
+    display: none !important;
+  }
+
+  /* 모바일 슬라이더 표시 */
+  .mobile-slider {
+    display: block;
+  }
+
+  h2 {
+    font-size: 2rem;
+    top: 5%;
+  }
+}
+
+/* 태블릿 (600px ~ 1219px) */
+@media (min-width: 600px) and (max-width: 1219px) {
+  /* 모바일 슬라이더 숨김 */
+  .mobile-slider {
+    display: none;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    top: 5%;
+  }
+
+  /* .container {
+    width: 700px;
+    height: 700px;
+    bottom: -50%;
+  }
+
+  .orbit {
+    transform: scale(0.7);
+  }
+
+  .image {
+    width: 280px;
+    height: 280px;
+  } */ /* 🟢 원형 컨테이너 크기 조금 확대 */
+  .container {
+    width: 850px; /* 기존 700 → 850 */
+    height: 850px; /* 기존 700 → 850 */
+    bottom: -50%;
+  }
+
+  /* 🟢 원 크기 살짝 확대 */
+  .orbit {
+    transform: scale(0.85); /* 기존 0.7 → 0.85 */
+  }
+
+  /* 🟢 이미지 크기 확대 */
+  .image {
+    width: 320px; /* 기존 280 → 320 */
+    height: 320px; /* 기존 280 → 320 */
+  }
+
+  .info h3 {
+    font-size: 20px;
+  }
+
+  .info p {
+    font-size: 16px;
+  }
+
+  /* 쿠키 이미지 크기 조정 */
+  .left,
+  .right {
+    width: 280px;
+    height: 280px;
+  }
+
+  .left.left2.oriC,
+  .right.right2.oriC {
+    width: 280px;
+    height: 280px;
+  }
+
+  .left.left3.yuzuC,
+  .right.right1.yuzuC {
+    width: 380px;
+    height: 380px;
+  }
+
+  .left.left3.gs,
+  .right.right1.gs {
+    width: 380px;
+    height: 380px;
+  }
+
+  .left.left2.hd,
+  .right.right2.hd {
+    width: 350px;
+    height: 350px;
+  }
+
+  .left.left3.br,
+  .right.right1.br {
+    width: 315px;
+    height: 315px;
+  }
+
+  .left.left1.gp,
+  .right.right3.gp {
+    width: 450px;
+    height: 450px;
+  }
+
+  .left.left2.cf,
+  .right.right2.cf {
+    width: 350px;
+    height: 350px;
+  }
+
+  .left.left1.ga,
+  .right.right3.ga {
+    width: 315px;
+    height: 315px;
+  }
+}
+
+/* 데스크탑 (1220px 이상) */
+@media (min-width: 1220px) {
+  /* 모바일 슬라이더 숨김 */
+  .mobile-slider {
+    display: none;
+  }
+  /* 모바일에서 클릭 우선순위 확보 */
+  .mobile-slider {
+    position: relative;
+    z-index: 50; /* 기존 orbit, deco보다 위 */
+  }
+
+  /* orbit, deco 레이어 클릭 차단 */
+  .orbit,
+  .deco {
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* 이미지 클릭 가능하게 */
+  .image {
+    pointer-events: auto;
+    z-index: 5;
+  }
+  /* 기본 스타일 유지 */
+}
