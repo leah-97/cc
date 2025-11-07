@@ -10,7 +10,7 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
-img {
+section img {
   display: block;
 }
 
@@ -661,75 +661,76 @@ img {
     /* 보일 때 클릭 가능하게 */
   }
 
-  /* footer */
-  /* Footer 모바일 */
-
+  /* Footer */
   footer {
     background: #f45b5b;
     color: #fff;
-    padding: 40px 20px;
+    padding: 60px 40px 40px;
     box-sizing: border-box;
   }
 
   .footer-container {
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* 가로로 배치 */
+    align-items: flex-start; /* 위쪽 정렬 */
     gap: 30px;
-    max-width: 100%;
+    flex-wrap: wrap;
   }
 
-  .footer-left,
-  .footer-right {
-    text-align: center;
-    width: 100%;
-  }
-
-  .footer-logo {
-    width: 100px;
-    margin: 0 auto 20px;
+  .footer-left {
+    flex: 1;
+    min-width: auto;
   }
 
   .footer-logo img {
-    width: 100%;
+    width: 150px;
+    margin-bottom: 20px;
   }
 
   .footer-address {
-    font-size: 12px;
     font-style: normal;
     line-height: 1.8;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.9);
-  }
-
-  .footer-contact {
-    margin-bottom: 20px;
   }
 
   .footer-address p {
     margin-bottom: 8px;
   }
 
+  .footer-right {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+  }
+
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+
   .customer-service {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     color: #fff;
     margin-bottom: 10px;
   }
 
   .service-hours {
-    font-size: 12px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.8);
   }
 
   .footer-social {
     margin-bottom: 20px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .footer-social a {
     display: inline-block;
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
@@ -743,13 +744,8 @@ img {
     transform: translateY(-3px);
   }
 
-  .footer-ck {
-    text-align: center;
-  }
-
   .footer-ck img {
-    width: 50px;
-    margin: 0 auto;
+    width: 60px;
   }
 }
 /* 데스크톱 (1220px 이상) */
@@ -833,23 +829,8 @@ img {
     position: relative;
     padding-top: 150px;
   }
-  /* .text { 
-margin-top: 300px;
-  width: 500px;
-  height: 540px;
-  color: white;
-  line-height: 70px;
-  border: 1px solid black;
-  font-weight: bold;
-  font-size: 2.3rem;
-  text-align: left;
-  align-items: center;
-  position: absolute;
-  left: 10%;
-  bottom: 150px;
-} */
   .text {
-    width: 100%;
+    /* width: 100%; */
     color: white;
     line-height: 70px;
     font-weight: bold;
