@@ -5,7 +5,7 @@
     <meta name="viewport" 1content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="css/product (1).css" />
+    <link rel="stylesheet" href="css/product.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -17,26 +17,27 @@
   <body>
     <!-- header -->
     <header>
-      <ul id="menu">
-        <li>
-          <h1>
-            <a href="index.html"> <img src="img/logo.png" alt="로고" /></a>
-          </h1>
-        </li>
-        <li>
-          <h2><a href="company.html">회사소개</a></h2>
-        </li>
-        <li>
-          <h2><a href="product.html">제품소개</a></h2>
-        </li>
-        <li>
-          <h2><a href="news.html">회사소식</a></h2>
-        </li>
-        <li>
-          <h2><a href="purchase.html">대량구매</a></h2>
-        </li>
-      </ul>
+      <nav>
+        <h1>
+          <a href="../index.html"
+            ><img class="head_w on" src="img/logo_white.png" alt="로고" /><img
+              class="head_r"
+              src="img/logo_red.png"
+          /></a>
+        </h1>
+        <!-- 햄버거바 -->
+        <div class="bars"><i class="fa-solid fa-bars"></i></div>
+        <ul id="menu">
+          <li><a href="company/company.html">회사소개</a></li>
+          <li><a href="product/product.html">제품소개</a></li>
+          <li><a href="news/news.html">회사소식</a></li>
+          <li><a href="Bulk purchase/purchase.html">대량구매</a></li>
+          <!-- 반응형 x버튼 -->
+          <li class="hclose"><i class="fa-solid fa-xmark"></i></li>
+        </ul>
+      </nav>
     </header>
+    <!-- header -->
 
     <!-- con01 -->
     <section class="con01">

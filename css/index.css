@@ -720,7 +720,6 @@ body {
     width: 100%;
     height: 50px;
     display: flex;
-    gap: 50px;
     overflow: hidden;
   }
 
@@ -1070,74 +1069,200 @@ body {
     font-size: 28px;
   }
 
-  /*visual, 비디오 전체 화면 */
-  .video-full {
-    padding: 120px 0;
-    height: 50vw;
-  }
-  .video-full video {
+  #visual {
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 60vh;
   }
+
+  .video-full {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+  }
+
+  .video-full video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    width: 100%;
+    height: 60vh;
+    min-height: 60vh;
+    object-fit: cover;
+    /* 모바일에서 비디오가 잘리지 않도록 추가 */
+    object-position: center;
+  }
+
+  /* 비디오 하단 네비게이션 */
   .video-nav {
-    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.38);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .dot.active {
+    background: rgba(235, 76, 76, 0.9);
+    transform: scale(1.2);
   }
 
   /* ------con01------ */
   .con01 {
     width: 100%;
-    height: 80vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    transition: background-color 0.5s;
-    color: #fff;
-    font-weight: bold;
+    background: #f45b5b;
     position: relative;
     overflow: hidden;
+    transition: background-color 0.5s ease;
   }
-  /* 플러스 중앙 */
+
+  .con01 .box {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+    height: 100vh;
+    margin: 0 auto;
+    z-index: 2;
+  }
+
+  /* 플러스 아이콘 */
   .con01 .plus {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.8s ease;
   }
 
-  /* 텍스트 (플러스보다 위, 오른쪽에서 슬라이드) */
+  .con01 .plus.on {
+    opacity: 1;
+  }
+
+  .con01 .plus img {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  }
+
+  /* 텍스트 애니메이션 */
   .con01 .list.text div {
     position: absolute;
+    top: 30%;
     left: 50%;
-    transform: translateX(150%); /* 오른쪽 밖에서 시작 */
+    transform: translate(150%, -50%);
     opacity: 0;
-    transition: transform 1s ease, opacity 1s ease;
-    font-size: calc(20px + 10vw);
+    font-size: clamp(4rem, 12vw, 13rem);
+    font-weight: 700;
     color: #fff;
     z-index: 10;
-  }
-  /* 플러스보다 위 위치 */
-  .con01 .text1,
-  .text2,
-  .text3 {
-    top: calc(50% - 300px);
+    white-space: nowrap;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  /* 로고 (플러스보다 아래, 중앙) */
+  .con01 .list.text div.active {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
 
+  .con01 .list.text div.exit {
+    transform: translate(-200%, -50%);
+    opacity: 0;
+  }
+
+  /* 각 텍스트별 딜레이 */
+  .con01 .text1.active {
+    transition-delay: 0.2s;
+  }
+
+  .con01 .text2.active {
+    transition-delay: 0.4s;
+  }
+
+  .con01 .text3.active {
+    transition-delay: 0.6s;
+  }
+
+  /* 로고 */
   .con01 .logo {
-    width: 200vw;
-    max-width: 1220px;
-    min-width: 601px;
-    height: auto;
+    width: 60vw;
+    max-width: 800px;
     position: absolute;
-    top: calc(50% + 50px);
+    top: 70%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     z-index: 10;
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 1s ease;
+    overflow: visible; /* 넘치는 부분도 보이게 */
+  }
+
+  .con01 .logo.on {
+    opacity: 1;
+    transition-delay: 0.3s;
+  }
+
+  .con01 .logo svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    overflow: visible; /* SVG도 넘치는 부분 보이게 */
+  }
+
+  .con01 .logo .cls-1 {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    paint-order: stroke;
+
+    /* SVG 글자 써지는 효과 강조 */
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* .on 클래스가 추가되면 애니메이션 시작 */
+  .con01 .logo.on .cls-1 {
+    animation: draw 6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 1s;
+  }
+
+  /* 글자 써지는 애니메이션 */
+  @keyframes draw {
+    0% {
+      stroke-dashoffset: 2000;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
   }
   /* ------con03------ */
   /*indexcon3Box*/
@@ -1502,26 +1627,91 @@ body {
     color: #ea0726;
   }
 
-  /* footer */
+  /* Footer */
   footer {
-    width: 100vw;
-    height: auto; /* 내용에 맞춰 자동 */
-    padding: 30px;
+    background: #f45b5b;
+    color: #fff;
+    padding: 60px 40px 40px;
     box-sizing: border-box;
-    overflow: hidden;
-  }
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
   }
 
-  .footer-left,
+  .footer-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* 가로로 배치 */
+    align-items: flex-start; /* 위쪽 정렬 */
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    flex: 1;
+    min-width: auto;
+  }
+
+  .footer-logo img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  .footer-address {
+    font-style: normal;
+    line-height: 1.8;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .footer-address p {
+    margin-bottom: 8px;
+  }
+
   .footer-right {
-    flex: 1 1 50%;
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+  }
+
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+
+  .customer-service {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .service-hours {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .footer-social {
-    justify-content: flex-end;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .footer-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .footer-ck img {
+    width: 60px;
   }
 }
 @media (max-width: 600px) {
@@ -1603,64 +1793,199 @@ body {
     font-size: 28px;
   }
   /*visual, 비디오 전체 화면 */
+  #visual {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+  }
+
   .video-full {
-    width: 100vw;
-    height: 30vh;
+    position: relative;
+    width: 100%;
+    height: 40vh;
     overflow: hidden;
   }
 
   .video-full video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 40vh;
+    height: 40vh;
     width: 100%;
-    height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    /* 모바일에서 비디오가 잘리지 않도록 추가 */
+    object-position: center;
   }
+
+  /* 비디오 하단 네비게이션 */
   .video-nav {
-    display: none;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.38);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .dot.active {
+    background: rgba(235, 76, 76, 0.9);
+    transform: scale(1.2);
   }
   /* ------con01------ */
   .con01 {
     width: 100%;
-    height: 60vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    transition: background-color 0.5s;
-    color: #fff;
-    font-weight: bold;
+    background: #f45b5b;
     position: relative;
     overflow: hidden;
+    transition: background-color 0.5s ease;
   }
 
-  /* 텍스트 (플러스보다 위, 오른쪽에서 슬라이드) */
+  .con01 .box {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    z-index: 2;
+    padding: 0 20px;
+  }
+
+  /* 플러스 아이콘 */
+  .con01 .plus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .con01 .plus.on {
+    opacity: 1;
+  }
+
+  .con01 .plus img {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  }
+
+  /* 텍스트 애니메이션 */
   .con01 .list.text div {
     position: absolute;
+    top: 25%;
     left: 50%;
-    transform: translateX(150%); /* 오른쪽 밖에서 시작 */
+    transform: translate(150%, -50%);
     opacity: 0;
-    transition: transform 1s ease, opacity 1s ease;
-    font-size: calc(20px + 10vw);
+    font-size: clamp(5rem, 15vw, 12rem);
+    font-weight: 700;
     color: #fff;
     z-index: 10;
-  }
-  /* 플러스보다 위 위치 */
-  .con01 .text1,
-  .text2,
-  .text3 {
-    top: calc(50% - 220px);
+    white-space: nowrap;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  /* 로고 (플러스보다 아래, 중앙) */
+  .con01 .list.text div.active {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  .con01 .list.text div.exit {
+    transform: translate(-200%, -50%);
+    opacity: 0;
+  }
+
+  /* 각 텍스트별 딜레이 */
+  .con01 .text1.active {
+    transition-delay: 0.2s;
+  }
+
+  .con01 .text2.active {
+    transition-delay: 0.4s;
+  }
+
+  .con01 .text3.active {
+    transition-delay: 0.6s;
+  }
+
+  /* 로고 */
   .con01 .logo {
-    width: calc(200vw + 200px);
-    width: 200vw;
-    height: auto;
+    width: 75vw;
+    max-width: 800px;
     position: absolute;
-    top: calc(50% + -20px);
+    top: 75%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     z-index: 10;
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 1s ease;
+    overflow: visible; /* 넘치는 부분도 보이게 */
+  }
+
+  .con01 .logo.on {
+    opacity: 1;
+    transition-delay: 0.3s;
+  }
+
+  .con01 .logo svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    overflow: visible; /* SVG도 넘치는 부분 보이게 */
+  }
+
+  .con01 .logo .cls-1 {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    paint-order: stroke;
+
+    /* SVG 글자 써지는 효과 강조 */
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* .on 클래스가 추가되면 애니메이션 시작 */
+  .con01 .logo.on .cls-1 {
+    animation: draw 6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 1s;
+  }
+
+  /* 글자 써지는 애니메이션 */
+  @keyframes draw {
+    0% {
+      stroke-dashoffset: 2000;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
   }
 
   /* ------con03------ */
@@ -2036,36 +2361,85 @@ body {
     color: #ea0726;
   }
 
-  /* footer */
-
+  /* Footer */
   footer {
-    width: 100vw;
-    height: auto; /* 내용에 맞춰 자동 */
-    padding: 30px;
+    background: #f45b5b;
+    color: #fff;
+    padding: 60px 40px 40px;
     box-sizing: border-box;
-    overflow: hidden;
   }
+
   .footer-container {
+    margin: 0 auto;
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    gap: 30px;
+    flex-wrap: wrap;
   }
 
   .footer-left,
   .footer-right {
-    font-size: 0.7rem;
-    flex: 1 1 100%;
-    margin-bottom: 20px;
+    flex: 1;
     text-align: center;
+    min-width: 100%;
+  }
+
+  .footer-logo img {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+
+  .footer-address {
+    font-style: normal;
+    line-height: 1.8;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .footer-address p {
+    margin-bottom: 8px;
+  }
+
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+
+  .customer-service {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .service-hours {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .footer-social {
-    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
   }
-  .footer-ck img {
-    position: absolute;
-    right: 0; /* 오른쪽 끝 */
-    top: 50%; /* 세로 중앙 */
 
-    width: 70px; /* 필요 시 크기 조절 */
+  .footer-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #fff;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .footer-ck img {
+    width: 60px;
   }
 }
