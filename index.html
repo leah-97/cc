@@ -546,27 +546,52 @@
       });
 
       gsap.registerPlugin(ScrollTrigger);
-      if (window.innerWidth > 600) {
+
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth > 600) {
         gsap.from(".one", {
           height: "100px",
+          ease: "power2.out",
           scrollTrigger: {
             trigger: ".one",
             start: "top bottom",
             toggleActions: "play none none reverse",
-            // markers: true,
+            // markers: true, //
           },
         });
+
         gsap.from(".two", {
-          width: "100px",
+          scaleX: 0,
           transformOrigin: "left center",
+          ease: "power2.out",
           scrollTrigger: {
             trigger: ".two",
             start: "top bottom",
             toggleActions: "play none none reverse",
-            // markers: true,
+            // markers: true, //
           },
         });
       }
+
+      window.addEventListener("resize", () => {
+        ScrollTrigger.refresh();
+      });
+
+      const botLogo = document.querySelector(".botLogo");
+      const logoWidth = botLogo.scrollWidth;
+      const viewportWidth = window.innerWidth;
+
+      if (logoWidth < viewportWidth * 2) {
+        botLogo.innerHTML += botLogo.innerHTML;
+      }
+      $(function () {
+        $(".botLogo").simplyScroll({
+          speed: 1,
+          pauseOnHover: false,
+          pauseOnTouch: false,
+        });
+      });
     </script>
   </body>
 </html>
